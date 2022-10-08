@@ -3,14 +3,27 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Classes
 {
-    public static class CRUD
+    public static class GeneralCRUD
     {
-        public static MySqlCommand SelectAllFromTable(string tableName)
+        public static MySqlCommand CustomQuery(string condition)
+        {
+            Connection connection = new Connection();
+            MySqlCommand command;
+            connection.Connect();
+            connection.Conn.Open();
+            command = new MySqlCommand(condition, connection.Conn);
+            command.ExecuteNonQuery();
+            connection.Conn.Close();
+            return command;
+        }
+
+        public static MySqlCommand SelectAll(string tableName)
         {
             Connection connection = new Connection();
             MySqlCommand command;
@@ -18,6 +31,18 @@ namespace Classes
             connection.Conn.Open();
             command = new MySqlCommand("SELECT * FROM " + tableName, connection.Conn);
             command.ExecuteNonQuery();            
+            connection.Conn.Close();
+            return command;
+        }
+
+        public static MySqlCommand Select(string tableName, string condition)
+        {
+            Connection connection = new Connection();
+            MySqlCommand command;
+            connection.Connect();
+            connection.Conn.Open();
+            command = new MySqlCommand("SELECT * FROM " + tableName + " WHERE " + condition, connection.Conn);
+            command.ExecuteNonQuery();
             connection.Conn.Close();
             return command;
         }

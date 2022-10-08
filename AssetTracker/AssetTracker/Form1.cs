@@ -36,7 +36,8 @@ namespace AssetTracker
             try
             {
                 dataTable = new DataTable();
-                adapter = new MySqlDataAdapter(CRUD.SelectAllFromTable("user_"));
+                //adapter = new MySqlDataAdapter(CRUD.SelectAll("user_"));
+                adapter = new MySqlDataAdapter(GeneralCRUD.Select("sgasset", "id = 1"));
                 adapter.Fill(dataTable);
                 dataGridView1.DataSource = dataTable.DefaultView;
             }

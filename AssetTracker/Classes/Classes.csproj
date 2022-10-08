@@ -84,8 +84,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetCRUD.cs" />
     <Compile Include="Connection.cs" />
-    <Compile Include="CRUD.cs" />
+    <Compile Include="GeneralCRUD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
