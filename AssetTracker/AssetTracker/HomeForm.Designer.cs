@@ -1,6 +1,6 @@
 ﻿namespace AssetTracker
 {
-    partial class Form1
+    partial class HomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,17 @@
         {
             this.btnLoad = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAddAsset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(713, 18);
+            this.btnLoad.Location = new System.Drawing.Point(872, 12);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 0;
-            this.btnLoad.Text = "Load";
+            this.btnLoad.Text = "Reload";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
@@ -50,16 +51,27 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 18);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(690, 408);
+            this.dataGridView1.Size = new System.Drawing.Size(854, 426);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // btnAddAsset
+            // 
+            this.btnAddAsset.Location = new System.Drawing.Point(872, 41);
+            this.btnAddAsset.Name = "btnAddAsset";
+            this.btnAddAsset.Size = new System.Drawing.Size(75, 23);
+            this.btnAddAsset.TabIndex = 2;
+            this.btnAddAsset.Text = "Add Asset";
+            this.btnAddAsset.UseVisualStyleBackColor = true;
+            this.btnAddAsset.Click += new System.EventHandler(this.btnAddAsset_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(959, 450);
+            this.Controls.Add(this.btnAddAsset);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnLoad);
             this.Name = "Form1";
@@ -73,6 +85,7 @@
 
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAddAsset;
     }
 }
 

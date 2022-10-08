@@ -29,10 +29,11 @@ C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\System.N
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\AssetTracker.csproj.AssemblyReference.cache
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\AssetTracker.csproj.SuggestedBindingRedirects.cache
-C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\AssetTracker.Form1.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\AssetTracker.Properties.Resources.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\AssetTracker.csproj.GenerateResource.cache
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\AssetTracker.csproj.CoreCompileInputs.cache
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\AssetTracker.csproj.CopyComplete
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\AssetTracker.exe
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\AssetTracker.pdb
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\AssetTracker.HomeForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\AssetTracker.AddAssetForm.resources

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    public static class GeneralCRUD
+    public static class GeneralDB
     {
         public static MySqlCommand CustomQuery(string condition)
         {
@@ -78,6 +78,14 @@ namespace Classes
             command = new MySqlCommand("UPDATE " + tableName + " SET " + values + " WHERE " + condition, connection.Conn);
             command.ExecuteNonQuery();
             connection.Conn.Close();
+        }
+
+        public static bool KeyExists(string table, string keyName, string keyValue)
+        {
+            MySqlDataAdapter adapter = new MySqlDataAdapter(GeneralDB.Select(table, keyName + " = '" + keyValue + "'"));
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt.Rows.Count > 0;
         }
     }
 }

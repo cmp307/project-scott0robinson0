@@ -12,18 +12,24 @@ using Classes;
 
 namespace AssetTracker
 {
-    public partial class Form1 : Form
+    public partial class HomeForm : Form
     {
         DataTable dataTable;
         MySqlDataAdapter adapter;
-        public Form1()
+        public HomeForm()
         {
             InitializeComponent();
+            this.LoadData();
+        }
+
+        private void LoadData()
+        {
             try
             {
-                //CRUD.Insert("user_", "firstname, lastname, username, email, password", "'first1', 'last1', 'username1', 'email1', 'password1'");
-                //CRUD.DeleteRowByPK("user_", "userid = 36");
-                //CRUD.UpdateRowByPK("user_", "firstname = 'new name'", "userid = 37");
+                dataTable = new DataTable();
+                adapter = new MySqlDataAdapter(AssetDB.SelectAllAssets());
+                adapter.Fill(dataTable);
+                dataGridView1.DataSource = dataTable.DefaultView;
             }
             catch (Exception ex)
             {
@@ -33,18 +39,14 @@ namespace AssetTracker
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            try
-            {
-                dataTable = new DataTable();
-                //adapter = new MySqlDataAdapter(CRUD.SelectAll("user_"));
-                adapter = new MySqlDataAdapter(GeneralCRUD.Select("sgasset", "id = 1"));
-                adapter.Fill(dataTable);
-                dataGridView1.DataSource = dataTable.DefaultView;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            this.LoadData();
+        }
+
+        private void btnAddAsset_Click(object sender, EventArgs e)
+        {
+            AddAssetForm addAssetForm = new AddAssetForm();
+            addAssetForm.ShowDialog();
+            this.LoadData();
         }
     }
 }
