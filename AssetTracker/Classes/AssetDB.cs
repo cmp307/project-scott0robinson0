@@ -13,15 +13,24 @@ namespace Classes
         public static MySqlCommand SelectAllAssets()
         {
             return GeneralDB.CustomQuery(@"
-                SELECT sgasset.id, sgasset.name, sgasset.ipaddress, sgasset.purchasedate, sgasset.note, sgasset.model, sgmodel.type, sgmodel.manufacturer
-                FROM sgasset
-                INNER JOIN sgmodel ON sgasset.model = sgmodel.name;
+                SELECT SGASSET.id, SGASSET.name, SGASSET.ipaddress, SGASSET.purchasedate, SGASSET.note, SGASSET.model, SGMODEL.type, SGMODEL.manufacturer
+                FROM SGASSET
+                INNER JOIN SGMODEL ON SGASSET.model = SGMODEL.name;
             ");
+        }
+
+        public static MySqlCommand SelectModelByName(string name, Connection connection)
+        {
+            return GeneralDB.CustomQuery2(@"
+                SELECT *
+                FROM SGMODEL
+                WHERE name = '" + name + @"';
+            ", connection);
         }
 
         public static void AddAsset(string name, string ipaddress, string purchasedate, string note, string model)
         {
-            GeneralDB.Insert("sgasset", "name, ipaddress, purchasedate, note, model", String.Format("'{0}', '{1}', '{2}', '{3}', '{4}'", name, ipaddress, purchasedate, note, model));
+            GeneralDB.Insert("SGASSET", "name, ipaddress, purchasedate, note, model", String.Format("'{0}', '{1}', '{2}', '{3}', '{4}'", name, ipaddress, purchasedate, note, model));
         }
 
         public static void AddAsset(string name, string ipaddress, string purchasedate, string note, string model, string type, string manufacturer)
@@ -32,12 +41,12 @@ namespace Classes
 
         public static void AddModel(string name, string type, string manufacturer)
         {
-            GeneralDB.Insert("sgmodel", "name, type, manufacturer", String.Format("'{0}', '{1}', '{2}'", name, type, manufacturer));
+            GeneralDB.Insert("SGMODEL", "name, type, manufacturer", String.Format("'{0}', '{1}', '{2}'", name, type, manufacturer));
         }
 
         public static bool ModelExists(string name)
         {
-            return GeneralDB.KeyExists("sgmodel", "name", name);
+            return GeneralDB.KeyExists("SGMODEL", "name", name);
         }
     }
 }

@@ -14,7 +14,7 @@ using MySql.Data.MySqlClient;
 namespace AssetTracker
 {
     public partial class AddAssetForm : Form
-    {        
+    {
         public AddAssetForm()
         {
             InitializeComponent();
@@ -25,6 +25,7 @@ namespace AssetTracker
             try
             {
                 if (AssetDB.ModelExists(txtModel.Text)) {
+                    
                     AssetDB.AddAsset(txtAssetName.Text, txtIPAddress.Text, dtpPurchaseDate.Text, txtNote.Text, txtModel.Text);
                 }
                 else
@@ -39,40 +40,31 @@ namespace AssetTracker
             }
         }
 
-        private void txtModel_TextChanged(object sender, EventArgs e)
+        private void txtModel_Leave(object sender, EventArgs e)
         {
-            if (AssetDB.ModelExists(txtModel.Text))
+            Connection connection = new Connection();
+            connection.Connect();
+            connection.Conn.Open();
+            MySqlCommand command = AssetDB.SelectModelByName(txtModel.Text, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
             {
                 txtType.Enabled = false;
                 txtManufacturer.Enabled = false;
-            }
+                txtType.Text = reader.GetString(1);
+                txtManufacturer.Text = reader.GetString(2); 
+            } 
             else
             {
                 txtType.Enabled = true;
                 txtManufacturer.Enabled = true;
             }
+            connection.Conn.Close();            
         }
 
-        private void txtIPAddress_TextChanged(object sender, EventArgs e)
+        private void AddAssetForm_Click(object sender, EventArgs e)
         {
-            if (GeneralDB.KeyExists("sgasset", "ipaddress", txtIPAddress.Text))
-            {
-                txtAssetName.Enabled = false;
-                dtpPurchaseDate.Enabled = false;
-                txtNote.Enabled = false;
-                txtModel.Enabled = false;
-                txtType.Enabled = false;
-                txtManufacturer.Enabled = false;
-            }
-            else
-            {
-                txtAssetName.Enabled = true;
-                dtpPurchaseDate.Enabled = true;
-                txtNote.Enabled = true;
-                txtModel.Enabled = true;
-                txtType.Enabled = true;
-                txtManufacturer.Enabled = true;
-            }
+            this.ActiveControl = null;
         }
     }
 }

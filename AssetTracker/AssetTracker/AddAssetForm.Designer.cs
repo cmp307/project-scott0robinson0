@@ -76,7 +76,6 @@
             this.txtIPAddress.Name = "txtIPAddress";
             this.txtIPAddress.Size = new System.Drawing.Size(175, 20);
             this.txtIPAddress.TabIndex = 2;
-            this.txtIPAddress.TextChanged += new System.EventHandler(this.txtIPAddress_TextChanged);
             // 
             // dtpPurchaseDate
             // 
@@ -128,7 +127,7 @@
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(175, 20);
             this.txtModel.TabIndex = 10;
-            this.txtModel.TextChanged += new System.EventHandler(this.txtModel_TextChanged);
+            this.txtModel.Leave += new System.EventHandler(this.txtModel_Leave);
             // 
             // lblType
             // 
@@ -194,6 +193,7 @@
             this.Controls.Add(this.txtAssetName);
             this.Name = "AddAssetForm";
             this.Text = "AddAssetForm";
+            this.Click += new System.EventHandler(this.AddAssetForm_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

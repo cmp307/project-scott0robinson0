@@ -23,6 +23,18 @@ namespace Classes
             return command;
         }
 
+        public static MySqlCommand CustomQuery2(string condition, Connection connection)
+        {
+            //Connection connection = new Connection();
+            MySqlCommand command;
+            //connection.Connect();
+            //connection.Conn.Open();
+            command = new MySqlCommand(condition, connection.Conn);
+            command.ExecuteNonQuery();
+            //connection.Conn.Close();
+            return command;
+        }
+
         public static MySqlCommand SelectAll(string tableName)
         {
             Connection connection = new Connection();
