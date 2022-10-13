@@ -21,7 +21,7 @@ namespace Classes
 
         public static MySqlCommand SelectModelByName(string name, Connection connection)
         {
-            return GeneralDB.CustomQuery2(@"
+            return GeneralDB.CustomQuery(@"
                 SELECT *
                 FROM SGMODEL
                 WHERE name = '" + name + @"';
