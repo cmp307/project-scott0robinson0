@@ -53,7 +53,7 @@ namespace AssetTracker
                 txtManufacturer.Enabled = false;
                 txtType.Text = reader.GetString(1);
                 txtManufacturer.Text = reader.GetString(2); 
-            } 
+            }
             else
             {
                 txtType.Enabled = true;
