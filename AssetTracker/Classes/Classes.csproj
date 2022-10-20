@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Database.cs" />
     <Compile Include="GeneralDB.cs" />
+    <Compile Include="Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
