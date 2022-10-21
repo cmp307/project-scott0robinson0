@@ -48,6 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.cbPurchaseDate = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtAssetName
@@ -84,12 +85,14 @@
             // 
             // dtpPurchaseDate
             // 
-            this.dtpPurchaseDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpPurchaseDate.CustomFormat = " ";
+            this.dtpPurchaseDate.Enabled = false;
             this.dtpPurchaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpPurchaseDate.Location = new System.Drawing.Point(50, 113);
+            this.dtpPurchaseDate.Location = new System.Drawing.Point(50, 133);
             this.dtpPurchaseDate.Name = "dtpPurchaseDate";
             this.dtpPurchaseDate.Size = new System.Drawing.Size(175, 20);
             this.dtpPurchaseDate.TabIndex = 6;
+            this.dtpPurchaseDate.Value = new System.DateTime(2022, 10, 21, 20, 52, 40, 0);
             // 
             // lblPurchaseDate
             // 
@@ -103,7 +106,7 @@
             // lblNote
             // 
             this.lblNote.AutoSize = true;
-            this.lblNote.Location = new System.Drawing.Point(47, 136);
+            this.lblNote.Location = new System.Drawing.Point(47, 156);
             this.lblNote.Name = "lblNote";
             this.lblNote.Size = new System.Drawing.Size(30, 13);
             this.lblNote.TabIndex = 9;
@@ -111,7 +114,7 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(50, 152);
+            this.txtNote.Location = new System.Drawing.Point(50, 172);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(175, 42);
@@ -120,7 +123,7 @@
             // lblModel
             // 
             this.lblModel.AutoSize = true;
-            this.lblModel.Location = new System.Drawing.Point(47, 197);
+            this.lblModel.Location = new System.Drawing.Point(47, 217);
             this.lblModel.Name = "lblModel";
             this.lblModel.Size = new System.Drawing.Size(36, 13);
             this.lblModel.TabIndex = 11;
@@ -128,7 +131,7 @@
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(50, 213);
+            this.txtModel.Location = new System.Drawing.Point(50, 233);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(175, 20);
             this.txtModel.TabIndex = 10;
@@ -137,7 +140,7 @@
             // lblType
             // 
             this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(47, 236);
+            this.lblType.Location = new System.Drawing.Point(47, 256);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(31, 13);
             this.lblType.TabIndex = 13;
@@ -145,7 +148,7 @@
             // 
             // txtType
             // 
-            this.txtType.Location = new System.Drawing.Point(50, 252);
+            this.txtType.Location = new System.Drawing.Point(50, 272);
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(175, 20);
             this.txtType.TabIndex = 12;
@@ -153,7 +156,7 @@
             // lblManufacturer
             // 
             this.lblManufacturer.AutoSize = true;
-            this.lblManufacturer.Location = new System.Drawing.Point(47, 275);
+            this.lblManufacturer.Location = new System.Drawing.Point(47, 295);
             this.lblManufacturer.Name = "lblManufacturer";
             this.lblManufacturer.Size = new System.Drawing.Size(70, 13);
             this.lblManufacturer.TabIndex = 15;
@@ -161,14 +164,14 @@
             // 
             // txtManufacturer
             // 
-            this.txtManufacturer.Location = new System.Drawing.Point(50, 291);
+            this.txtManufacturer.Location = new System.Drawing.Point(50, 311);
             this.txtManufacturer.Name = "txtManufacturer";
             this.txtManufacturer.Size = new System.Drawing.Size(175, 20);
             this.txtManufacturer.TabIndex = 14;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(50, 317);
+            this.btnSubmit.Location = new System.Drawing.Point(50, 337);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(175, 23);
             this.btnSubmit.TabIndex = 16;
@@ -200,7 +203,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(225, 298);
+            this.label3.Location = new System.Drawing.Point(225, 318);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(11, 13);
             this.label3.TabIndex = 19;
@@ -210,7 +213,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(225, 259);
+            this.label4.Location = new System.Drawing.Point(225, 279);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(11, 13);
             this.label4.TabIndex = 20;
@@ -220,17 +223,28 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(225, 220);
+            this.label5.Location = new System.Drawing.Point(225, 240);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(11, 13);
             this.label5.TabIndex = 21;
             this.label5.Text = "*";
             // 
+            // cbPurchaseDate
+            // 
+            this.cbPurchaseDate.AutoSize = true;
+            this.cbPurchaseDate.Location = new System.Drawing.Point(50, 113);
+            this.cbPurchaseDate.Name = "cbPurchaseDate";
+            this.cbPurchaseDate.Size = new System.Drawing.Size(15, 14);
+            this.cbPurchaseDate.TabIndex = 22;
+            this.cbPurchaseDate.UseVisualStyleBackColor = true;
+            this.cbPurchaseDate.CheckedChanged += new System.EventHandler(this.cbPurchaseDate_CheckedChanged);
+            // 
             // AddAssetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(280, 375);
+            this.ClientSize = new System.Drawing.Size(280, 404);
+            this.Controls.Add(this.cbPurchaseDate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -281,5 +295,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox cbPurchaseDate;
     }
 }

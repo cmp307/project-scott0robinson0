@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySql.Data.Types;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -52,10 +53,25 @@ namespace Classes
             cmd.ExecuteNonQuery();
         }
 
+        public void AddAsset(string name, string ipaddress, string note, string model)
+        {
+            string sql = @"INSERT INTO SGASSET (name, ipaddress, note, model)
+                           VALUES " + String.Format("('{0}', '{1}', '{2}', '{3}')", name, ipaddress, note, model);
+
+            MySqlCommand cmd = new MySqlCommand(sql, Conn);
+            cmd.ExecuteNonQuery();
+        }
+
         public void AddAsset(string name, string ipaddress, string purchasedate, string note, string model, string type, string manufacturer)
         {
             AddModel(model, type, manufacturer);
             AddAsset(name, ipaddress, purchasedate, note, model);
+        }
+
+        public void AddAsset(string name, string ipaddress, string note, string model, string type, string manufacturer)
+        {
+            AddModel(model, type, manufacturer);
+            AddAsset(name, ipaddress, note, model);
         }
 
         public void AddModel(string name, string type, string manufacturer)
