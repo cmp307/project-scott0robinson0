@@ -15,7 +15,7 @@ namespace Classes
         public static MySqlCommand SelectAllAssets()
         {
             string sql = @"
-                SELECT SGASSET.id, SGASSET.name, SGASSET.ipaddress, SGASSET.purchasedate, SGASSET.note, SGASSET.model, SGMODEL.type, SGMODEL.manufacturer
+                SELECT SGASSET.id 'ID', SGASSET.name 'Name', SGASSET.ipaddress 'IP Address', SGASSET.purchasedate 'Purchase Date', SGASSET.note 'Note', SGASSET.model 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
                 FROM SGASSET
                 INNER JOIN SGMODEL ON SGASSET.model = SGMODEL.name;
             ";

@@ -24,6 +24,31 @@ namespace AssetTracker
         {
             try
             {
+                if (txtAssetName.Text == "")
+                {
+                    throw new Exception("Asset name is mandatory.");
+                }
+
+                if (txtIPAddress.Text == "")
+                {
+                    throw new Exception("IP address is mandatory.");
+                }
+
+                if (txtModel.Text == "")
+                {
+                    throw new Exception("Model is mandatory.");
+                }
+
+                if (txtType.Text == "")
+                {
+                    throw new Exception("Type is mandatory.");
+                }
+
+                if (txtManufacturer.Text == "")
+                {
+                    throw new Exception("Manufacturer is mandatory.");
+                }
+
                 Database.Conn.Open();
                 if (Database.ModelExists(txtModel.Text))
                 {
@@ -50,7 +75,7 @@ namespace AssetTracker
             MySqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
-                txtType.Enabled = false;
+                //txtType.Enabled = false; WHY IS THIS BROKEN - debug mode?
                 txtManufacturer.Enabled = false;
                 txtType.Text = reader.GetString(1);
                 txtManufacturer.Text = reader.GetString(2);
