@@ -49,17 +49,19 @@ namespace AssetTracker
                     throw new Exception("Manufacturer is mandatory.");
                 }
 
-                Database.Conn.Open();
-                if (Database.ModelExists(txtModel.Text))
+                Database database = new Database();
+                database.Connect();
+                database.Conn.Open();
+                if (database.ModelExists(txtModel.Text))
                 {
 
-                    Database.AddAsset(txtAssetName.Text, txtIPAddress.Text, dtpPurchaseDate.Text, txtNote.Text, txtModel.Text);
+                    database.AddAsset(txtAssetName.Text, txtIPAddress.Text, dtpPurchaseDate.Text, txtNote.Text, txtModel.Text);
                 }
                 else
                 {
-                    Database.AddAsset(txtAssetName.Text, txtIPAddress.Text, dtpPurchaseDate.Text, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
+                    database.AddAsset(txtAssetName.Text, txtIPAddress.Text, dtpPurchaseDate.Text, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
                 }
-                Database.Conn.Close();
+                database.Conn.Close();
                 this.Close();
             }
             catch (Exception ex)
@@ -70,12 +72,14 @@ namespace AssetTracker
 
         private void txtModel_Leave(object sender, EventArgs e)
         {
-            Database.Conn.Open();
-            MySqlCommand command = Database.SelectModelByName(txtModel.Text);
+            Database database = new Database();
+            database.Connect();
+            database.Conn.Open();
+            MySqlCommand command = database.SelectModelByName(txtModel.Text);
             MySqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
-                //txtType.Enabled = false; WHY IS THIS BROKEN - debug mode?
+                txtType.Enabled = false;
                 txtManufacturer.Enabled = false;
                 txtType.Text = reader.GetString(1);
                 txtManufacturer.Text = reader.GetString(2);
@@ -85,7 +89,7 @@ namespace AssetTracker
                 txtType.Enabled = true;
                 txtManufacturer.Enabled = true;
             }
-            Database.Conn.Close();
+            database.Conn.Close();
         }
 
         private void AddAssetForm_Click(object sender, EventArgs e)
