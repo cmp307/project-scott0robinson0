@@ -50,7 +50,7 @@ namespace AssetTracker
             MySqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
-                //txtType.Enabled = false;
+                txtType.Enabled = false;
                 txtManufacturer.Enabled = false;
                 txtType.Text = reader.GetString(1);
                 txtManufacturer.Text = reader.GetString(2);
