@@ -12,6 +12,6 @@ namespace Classes
         public string IpAddress;
         public string purchasedate;
         public string note;
-        // public Model model;
+        public Model model;
     }
 }
