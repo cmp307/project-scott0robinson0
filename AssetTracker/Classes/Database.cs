@@ -8,16 +8,11 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    public class Database
+    public static class Database
     {
-        public MySqlConnection Conn;
+        public static MySqlConnection Conn = new MySqlConnection("Server=lochnagar.abertay.ac.uk; Database=sql2203326; Uid=sql2203326; Pwd=iVGGteQzELna;");
 
-        public void Connect()
-        {
-            Conn = new MySqlConnection("Server=lochnagar.abertay.ac.uk; Database=sql2203326; Uid=sql2203326; Pwd=iVGGteQzELna;");
-        }
-
-        public MySqlCommand SelectAllAssets()
+        public static MySqlCommand SelectAllAssets()
         {
             string sql = @"
                 SELECT SGASSET.id, SGASSET.name, SGASSET.ipaddress, SGASSET.purchasedate, SGASSET.note, SGASSET.model, SGMODEL.type, SGMODEL.manufacturer
@@ -30,34 +25,50 @@ namespace Classes
             return cmd;
         }
 
-        //public MySqlCommand SelectModelByName(string name, Connection connection)
-        //{
-        //    return GeneralDB.CustomQuery(@"
-        //        SELECT *
-        //        FROM SGMODEL
-        //        WHERE name = '" + name + @"';
-        //    ", connection);
-        //}
+        public static MySqlCommand SelectModelByName(string name)
+        {
+            string sql = @"
+                SELECT *
+                FROM SGMODEL
+                WHERE name = '" + name + @"';
+            ";
 
-        //public void AddAsset(string name, string ipaddress, string purchasedate, string note, string model)
-        //{
-        //    GeneralDB.Insert("SGASSET", "name, ipaddress, purchasedate, note, model", String.Format("'{0}', '{1}', '{2}', '{3}', '{4}'", name, ipaddress, purchasedate, note, model));
-        //}
+            MySqlCommand cmd = new MySqlCommand(sql, Conn);
+            cmd.ExecuteNonQuery();
+            return cmd;
+        }
 
-        //public void AddAsset(string name, string ipaddress, string purchasedate, string note, string model, string type, string manufacturer)
-        //{
-        //    AddModel(model, type, manufacturer);
-        //    AddAsset(name, ipaddress, purchasedate, note, model);
-        //}
+        public static void AddAsset(string name, string ipaddress, string purchasedate, string note, string model)
+        {
+            string sql = @"INSERT INTO SGASSET (name, ipaddress, purchasedate, note, model)
+                           VALUES " + String.Format("('{0}', '{1}', '{2}', '{3}', '{4}')", name, ipaddress, purchasedate, note, model);
 
-        //public void AddModel(string name, string type, string manufacturer)
-        //{
-        //    GeneralDB.Insert("SGMODEL", "name, type, manufacturer", String.Format("'{0}', '{1}', '{2}'", name, type, manufacturer));
-        //}
+            MySqlCommand cmd = new MySqlCommand(sql, Conn);
+            cmd.ExecuteNonQuery();
+        }
 
-        //public bool ModelExists(string name)
-        //{
-        //    return GeneralDB.KeyExists("SGMODEL", "name", name);
-        //}
+        public static void AddAsset(string name, string ipaddress, string purchasedate, string note, string model, string type, string manufacturer)
+        {
+            AddModel(model, type, manufacturer);
+            AddAsset(name, ipaddress, purchasedate, note, model);
+        }
+
+        public static void AddModel(string name, string type, string manufacturer)
+        {
+            string sql = @"INSERT INTO SGMODEL (name, type, manufacturer)
+                           VALUES " + String.Format("('{0}', '{1}', '{2}')", name, type, manufacturer);
+
+            MySqlCommand cmd = new MySqlCommand(sql, Conn);
+            cmd.ExecuteNonQuery();
+        }
+
+        public static bool ModelExists(string name)
+        {
+            MySqlCommand cmd = Database.SelectModelByName(name);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            bool exists = reader.Read();
+            reader.Close();
+            return exists;
+        }
     }
 }
