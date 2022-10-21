@@ -85,8 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asset.cs" />
-    <Compile Include="AssetDB.cs" />
-    <Compile Include="Connection.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="GeneralDB.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

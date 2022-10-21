@@ -36,7 +36,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(872, 12);
+            this.btnLoad.Location = new System.Drawing.Point(861, 12);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 0;
@@ -53,12 +53,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(854, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(843, 426);
             this.dataGridView1.TabIndex = 1;
             // 
             // btnAddAsset
             // 
-            this.btnAddAsset.Location = new System.Drawing.Point(872, 41);
+            this.btnAddAsset.Location = new System.Drawing.Point(861, 41);
             this.btnAddAsset.Name = "btnAddAsset";
             this.btnAddAsset.Size = new System.Drawing.Size(75, 23);
             this.btnAddAsset.TabIndex = 2;
@@ -66,15 +66,15 @@
             this.btnAddAsset.UseVisualStyleBackColor = true;
             this.btnAddAsset.Click += new System.EventHandler(this.btnAddAsset_Click);
             // 
-            // Form1
+            // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 450);
+            this.ClientSize = new System.Drawing.Size(948, 450);
             this.Controls.Add(this.btnAddAsset);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnLoad);
-            this.Name = "Form1";
+            this.Name = "HomeForm";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
