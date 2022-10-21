@@ -26,8 +26,14 @@ namespace AssetTracker
         {
             try
             {
+                Database database = new Database();
                 dataTable = new DataTable();
-                adapter = new MySqlDataAdapter(AssetDB.SelectAllAssets());
+
+                database.Connect();
+                database.Conn.Open();
+                adapter = new MySqlDataAdapter(database.SelectAllAssets());
+                database.Conn.Close();
+
                 adapter.Fill(dataTable);
                 dataGridView1.DataSource = dataTable.DefaultView;
             }

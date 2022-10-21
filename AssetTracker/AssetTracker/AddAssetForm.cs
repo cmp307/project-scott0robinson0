@@ -22,44 +22,45 @@ namespace AssetTracker
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (AssetDB.ModelExists(txtModel.Text)) {
-                    
-                    AssetDB.AddAsset(txtAssetName.Text, txtIPAddress.Text, dtpPurchaseDate.Text, txtNote.Text, txtModel.Text);
-                }
-                else
-                {
-                    AssetDB.AddAsset(txtAssetName.Text, txtIPAddress.Text, dtpPurchaseDate.Text, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
-                }
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    if (Database.ModelExists(txtModel.Text))
+            //    {
+
+            //        Database.AddAsset(txtAssetName.Text, txtIPAddress.Text, dtpPurchaseDate.Text, txtNote.Text, txtModel.Text);
+            //    }
+            //    else
+            //    {
+            //        Database.AddAsset(txtAssetName.Text, txtIPAddress.Text, dtpPurchaseDate.Text, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
+            //    }
+            //    this.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void txtModel_Leave(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            connection.Connect();
-            connection.Conn.Open();
-            MySqlCommand command = AssetDB.SelectModelByName(txtModel.Text, connection);
-            MySqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
-            {
-                txtType.Enabled = false;
-                txtManufacturer.Enabled = false;
-                txtType.Text = reader.GetString(1);
-                txtManufacturer.Text = reader.GetString(2); 
-            }
-            else
-            {
-                txtType.Enabled = true;
-                txtManufacturer.Enabled = true;
-            }
-            connection.Conn.Close();            
+            //Connection connection = new Connection();
+            //connection.Connect();
+            //connection.Conn.Open();
+            //MySqlCommand command = Database.SelectModelByName(txtModel.Text, connection);
+            //MySqlDataReader reader = command.ExecuteReader();
+            //if (reader.Read())
+            //{
+            //    txtType.Enabled = false;
+            //    txtManufacturer.Enabled = false;
+            //    txtType.Text = reader.GetString(1);
+            //    txtManufacturer.Text = reader.GetString(2);
+            //}
+            //else
+            //{
+            //    txtType.Enabled = true;
+            //    txtManufacturer.Enabled = true;
+            //}
+            //connection.Conn.Close();
         }
 
         private void AddAssetForm_Click(object sender, EventArgs e)

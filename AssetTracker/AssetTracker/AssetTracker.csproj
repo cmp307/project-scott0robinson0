@@ -132,11 +132,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Classes\Classes.csproj">
-      <Project>{946dd2f4-1074-41f0-bd6d-76bccdfddebd}</Project>
-      <Name>Classes</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
