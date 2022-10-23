@@ -5,7 +5,11 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetTracker", "AssetTracker\AssetTracker.csproj", "{51EA894F-4BE3-48D8-84EC-66878D160EEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "Classes\Classes.csproj", "{946DD2F4-1074-41F0-BD6D-76BCCDFDDEBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes3", "Classes\Classes3.csproj", "{946DD2F4-1074-41F0-BD6D-76BCCDFDDEBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetTracker2", "AssetTracker2\AssetTracker2.csproj", "{DE2F6FAA-6B6A-4E39-8193-C8EFBA534BCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "Classes2\Classes.csproj", "{10D92634-F3B5-429F-B94F-96DCC98E1FBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{946DD2F4-1074-41F0-BD6D-76BCCDFDDEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{946DD2F4-1074-41F0-BD6D-76BCCDFDDEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{946DD2F4-1074-41F0-BD6D-76BCCDFDDEBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE2F6FAA-6B6A-4E39-8193-C8EFBA534BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE2F6FAA-6B6A-4E39-8193-C8EFBA534BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE2F6FAA-6B6A-4E39-8193-C8EFBA534BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE2F6FAA-6B6A-4E39-8193-C8EFBA534BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10D92634-F3B5-429F-B94F-96DCC98E1FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10D92634-F3B5-429F-B94F-96DCC98E1FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10D92634-F3B5-429F-B94F-96DCC98E1FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10D92634-F3B5-429F-B94F-96DCC98E1FBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
