@@ -920,9 +920,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\AssetTracker2.csproj",
-      "projectName": "AssetTracker2",
-      "projectPath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\AssetTracker2.csproj",
+      "projectUniqueName": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\AssetTracker.csproj",
+      "projectName": "AssetTracker",
+      "projectPath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\AssetTracker.csproj",
       "packagesPath": "C:\\Users\\Scott\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\obj\\",
       "projectStyle": "PackageReference",

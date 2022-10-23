@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,15 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using Classes;
 
-namespace AssetTracker
+namespace AssetTracker2
 {
     public partial class HomeForm : Form
     {
-        DataTable? dataTable;
-        MySqlDataAdapter? adapter;
+        DataTable dataTable;
+        MySqlDataAdapter adapter;
         public HomeForm()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace AssetTracker
             {
                 dataTable = new DataTable();
 
-                Database database = new();
+                Database database = new Database();
                 database.Conn.Open();
                 adapter = new MySqlDataAdapter(database.SelectAllAssets());
                 database.Conn.Close();
@@ -42,7 +42,7 @@ namespace AssetTracker
             }
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void btnReload_Click(object sender, EventArgs e)
         {
             this.LoadData();
         }

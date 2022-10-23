@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y35ppGerxb1iyEMkN5aSSse16MXr3i5kK6429zWdz+RJSJi/bKc0iBTM9zL1UlGsIMVMofnRZEw2oLU3spyXxw==",
+  "dgSpecHash": "o/nY5sU6LLoweHIxOoueM18YqmSnt2722mGQeE2fil+X2Iqi+5+wtdkcROWTk9mQvKsE/YbsC3ouwcPV43S0XQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\AssetTracker2.csproj",
+  "projectFilePath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\AssetTracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Scott\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",

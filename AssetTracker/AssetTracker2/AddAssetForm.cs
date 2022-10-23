@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,7 +10,7 @@ using System.Windows.Forms;
 using Classes;
 using MySql.Data.MySqlClient;
 
-namespace AssetTracker
+namespace AssetTracker2
 {
     public partial class AddAssetForm : Form
     {
@@ -21,8 +20,6 @@ namespace AssetTracker
             InitializeComponent();
             PurchaseDate = "";
         }
-
-        
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -52,9 +49,9 @@ namespace AssetTracker
                         database.AddAsset(txtAssetName.Text, txtIPAddress.Text, txtNote.Text, txtModel.Text);
                 else
                     if (dtpPurchaseDate.Enabled)
-                        database.AddAsset(txtAssetName.Text, txtIPAddress.Text, PurchaseDate, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
-                    else
-                        database.AddAsset(txtAssetName.Text, txtIPAddress.Text, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
+                    database.AddAsset(txtAssetName.Text, txtIPAddress.Text, PurchaseDate, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
+                else
+                    database.AddAsset(txtAssetName.Text, txtIPAddress.Text, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
                 database.Conn.Close();
                 this.Close();
             }

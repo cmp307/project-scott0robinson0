@@ -20,9 +20,7 @@ namespace AssetTracker
         {
             InitializeComponent();
             PurchaseDate = "";
-        }
-
-        
+        } 
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {

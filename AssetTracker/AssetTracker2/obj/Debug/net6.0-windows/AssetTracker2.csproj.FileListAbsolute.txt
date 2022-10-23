@@ -1,12 +1,9 @@
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker2.csproj.AssemblyReference.cache
-C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker2.Form1.resources
-C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker.HomeForm.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker2.csproj.GenerateResource.cache
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker2.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker2.AssemblyInfoInputs.cache
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker2.AssemblyInfo.cs
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker2.csproj.CoreCompileInputs.cache
-C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker.AddAssetForm.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\bin\Debug\net6.0-windows\AssetTracker2.exe
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\bin\Debug\net6.0-windows\AssetTracker2.deps.json
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\bin\Debug\net6.0-windows\AssetTracker2.runtimeconfig.json
@@ -27,4 +24,5 @@ C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker2.pdb
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker2.genruntimeconfig.cache
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\ref\AssetTracker2.dll
-C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker.Form1.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker2.AddAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker2.HomeForm.resources

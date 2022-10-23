@@ -12,13 +12,4 @@
     <ProjectReference Include="..\Classes2\Classes.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="AddAssetForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="HomeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-  </ItemGroup>
-
 </Project>
