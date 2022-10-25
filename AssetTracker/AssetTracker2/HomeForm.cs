@@ -9,49 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Classes;
+using AssetTracker;
 
 namespace AssetTracker2
 {
     public partial class HomeForm : Form
     {
-        DataTable dataTable;
-        MySqlDataAdapter adapter;
         public HomeForm()
         {
             InitializeComponent();
-            this.LoadData();
-        }
-
-        private void LoadData()
-        {
-            try
-            {
-                dataTable = new DataTable();
-
-                Database database = new Database();
-                database.Conn.Open();
-                adapter = new MySqlDataAdapter(database.SelectAllAssets());
-                database.Conn.Close();
-
-                adapter.Fill(dataTable);
-                dataGridView1.DataSource = dataTable.DefaultView;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            this.LoadData();
         }
 
         private void btnAddAsset_Click(object sender, EventArgs e)
         {
             AddAssetForm addAssetForm = new AddAssetForm();
             addAssetForm.ShowDialog();
-            this.LoadData();
+        }
+
+        private void btnFindAssets_Click(object sender, EventArgs e)
+        {
+            RetrieveAssetForm retrieveAssetForm = new RetrieveAssetForm();
+            retrieveAssetForm.ShowDialog();
         }
     }
 }

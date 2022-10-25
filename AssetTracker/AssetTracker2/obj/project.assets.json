@@ -1007,23 +1007,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\scott\\.nuget\\packages\\": {},
+    "C:\\Users\\Scott\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\AssetTracker2\\AssetTracker.csproj",
+      "projectUniqueName": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\AssetTracker.csproj",
       "projectName": "AssetTracker",
-      "projectPath": "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\AssetTracker2\\AssetTracker.csproj",
-      "packagesPath": "C:\\Users\\scott\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\AssetTracker2\\obj\\",
+      "projectPath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\AssetTracker.csproj",
+      "packagesPath": "C:\\Users\\Scott\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\scott\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Scott\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1038,8 +1038,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\Classes2\\Classes.csproj": {
-              "projectPath": "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\Classes2\\Classes.csproj"
+            "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\Classes2\\Classes.csproj": {
+              "projectPath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\Classes2\\Classes.csproj"
             }
           }
         }

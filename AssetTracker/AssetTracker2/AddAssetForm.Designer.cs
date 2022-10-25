@@ -277,7 +277,7 @@
             this.Controls.Add(this.txtAssetName);
             this.Controls.Add(this.label1);
             this.Name = "AddAssetForm";
-            this.Text = "AddAssetForm";
+            this.Text = "Add Asset";
             this.Click += new System.EventHandler(this.AddAssetForm_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
