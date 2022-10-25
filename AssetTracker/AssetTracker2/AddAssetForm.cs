@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
+using System.Configuration.Internal;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Classes;
 using MySql.Data.MySqlClient;
+using System.Management;
 
 namespace AssetTracker2
 {
@@ -100,6 +104,20 @@ namespace AssetTracker2
                 dtpPurchaseDate.CustomFormat = " ";
                 dtpPurchaseDate.Enabled = false;
                 PurchaseDate = "";
+            }
+        }
+
+        private void btnLoadData_Click(object sender, EventArgs e)
+        {
+            txtAssetName.Text = Environment.MachineName;
+            txtIPAddress.Text = new HttpClient().GetStringAsync("http://icanhazip.com").Result;
+            //System.Management.SelectQuery query = new System.Management.SelectQuery("SELECT * FROM Win32_ComputerSystem");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_DesktopMonitor");
+        
+            foreach (ManagementObject managementObject in searcher.Get())
+            {
+                txtNote.Text += managementObject.ToString();
+                txtNote.Text += "\n";
             }
         }
     }

@@ -26,3 +26,5 @@ C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker.pdb
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker.genruntimeconfig.cache
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\ref\AssetTracker.dll
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\bin\Debug\net6.0-windows\System.Management.dll
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
