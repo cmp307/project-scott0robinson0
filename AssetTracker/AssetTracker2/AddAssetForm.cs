@@ -112,12 +112,27 @@ namespace AssetTracker2
             txtAssetName.Text = Environment.MachineName;
             txtIPAddress.Text = new HttpClient().GetStringAsync("http://icanhazip.com").Result;
             //System.Management.SelectQuery query = new System.Management.SelectQuery("SELECT * FROM Win32_ComputerSystem");
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_DesktopMonitor");
-        
-            foreach (ManagementObject managementObject in searcher.Get())
+            //ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_DesktopMonitor");
+            //ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_ComputerSystem");
+
+            //foreach (ManagementObject managementObject in searcher.Get())
+            //{
+            //    txtNote.Text += managementObject.ToString();
+            //    txtNote.Text += "\n";
+            //}
+
+            // https://stackoverflow.com/questions/26253423/get-system-information-using-c-sharp
+            System.Management.SelectQuery query = new System.Management.SelectQuery("Select * from Win32_ComputerSystem");
+
+            using (System.Management.ManagementObjectSearcher searcher = new System.Management.ManagementObjectSearcher(query))
             {
-                txtNote.Text += managementObject.ToString();
-                txtNote.Text += "\n";
+                foreach (System.Management.ManagementObject process in searcher.Get())
+                {
+                    process.Get();
+                    txtManufacturer.Text += process["Manufacturer"];
+                    txtModel.Text += process["Model"];
+                    txtType.Text += process["SystemType"];
+                }
             }
         }
     }

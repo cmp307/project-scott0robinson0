@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\AssetTracker.csproj": {}
+    "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\AssetTracker2\\AssetTracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\AssetTracker.csproj": {
+    "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\AssetTracker2\\AssetTracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\AssetTracker.csproj",
+        "projectUniqueName": "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\AssetTracker2\\AssetTracker.csproj",
         "projectName": "AssetTracker",
-        "projectPath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\AssetTracker.csproj",
-        "packagesPath": "C:\\Users\\Scott\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker2\\obj\\",
+        "projectPath": "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\AssetTracker2\\AssetTracker.csproj",
+        "packagesPath": "C:\\Users\\scott\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\AssetTracker2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Scott\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\scott\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\Classes2\\Classes.csproj": {
-                "projectPath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\Classes2\\Classes.csproj"
+              "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\Classes2\\Classes.csproj": {
+                "projectPath": "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\Classes2\\Classes.csproj"
               }
             }
           }
@@ -76,20 +76,20 @@
         }
       }
     },
-    "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\Classes2\\Classes.csproj": {
+    "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\Classes2\\Classes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\Classes2\\Classes.csproj",
+        "projectUniqueName": "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\Classes2\\Classes.csproj",
         "projectName": "Classes",
-        "projectPath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\Classes2\\Classes.csproj",
-        "packagesPath": "C:\\Users\\Scott\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\Classes2\\obj\\",
+        "projectPath": "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\Classes2\\Classes.csproj",
+        "packagesPath": "C:\\Users\\scott\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\scott\\OneDrive\\Documents\\GitHub\\project-scott0robinson0\\AssetTracker\\Classes2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Scott\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\scott\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

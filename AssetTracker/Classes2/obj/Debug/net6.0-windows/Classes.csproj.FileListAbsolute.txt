@@ -10,3 +10,15 @@ C:\Users\Scott\source\repos\project\AssetTracker\Classes2\obj\Debug\net6.0-windo
 C:\Users\Scott\source\repos\project\AssetTracker\Classes2\obj\Debug\net6.0-windows\refint\Classes.dll
 C:\Users\Scott\source\repos\project\AssetTracker\Classes2\obj\Debug\net6.0-windows\Classes.pdb
 C:\Users\Scott\source\repos\project\AssetTracker\Classes2\obj\Debug\net6.0-windows\ref\Classes.dll
+C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\Classes2\bin\Debug\net6.0-windows\Classes.deps.json
+C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\Classes2\bin\Debug\net6.0-windows\Classes.dll
+C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\Classes2\bin\Debug\net6.0-windows\Classes.pdb
+C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\Classes2\obj\Debug\net6.0-windows\Classes.csproj.AssemblyReference.cache
+C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\Classes2\obj\Debug\net6.0-windows\Classes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\Classes2\obj\Debug\net6.0-windows\Classes.AssemblyInfoInputs.cache
+C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\Classes2\obj\Debug\net6.0-windows\Classes.AssemblyInfo.cs
+C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\Classes2\obj\Debug\net6.0-windows\Classes.csproj.CoreCompileInputs.cache
+C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\Classes2\obj\Debug\net6.0-windows\Classes.dll
+C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\Classes2\obj\Debug\net6.0-windows\refint\Classes.dll
+C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\Classes2\obj\Debug\net6.0-windows\Classes.pdb
+C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\Classes2\obj\Debug\net6.0-windows\ref\Classes.dll
