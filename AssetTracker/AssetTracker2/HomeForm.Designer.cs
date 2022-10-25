@@ -30,6 +30,8 @@
         {
             this.btnAddAsset = new System.Windows.Forms.Button();
             this.btnFindAssets = new System.Windows.Forms.Button();
+            this.btnDeleteAsset = new System.Windows.Forms.Button();
+            this.btnUpdateAsset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddAsset
@@ -52,11 +54,33 @@
             this.btnFindAssets.UseVisualStyleBackColor = true;
             this.btnFindAssets.Click += new System.EventHandler(this.btnFindAssets_Click);
             // 
+            // btnDeleteAsset
+            // 
+            this.btnDeleteAsset.Location = new System.Drawing.Point(67, 161);
+            this.btnDeleteAsset.Name = "btnDeleteAsset";
+            this.btnDeleteAsset.Size = new System.Drawing.Size(91, 30);
+            this.btnDeleteAsset.TabIndex = 4;
+            this.btnDeleteAsset.Text = "Delete Asset";
+            this.btnDeleteAsset.UseVisualStyleBackColor = true;
+            this.btnDeleteAsset.Click += new System.EventHandler(this.btnDeleteAsset_Click);
+            // 
+            // btnUpdateAsset
+            // 
+            this.btnUpdateAsset.Location = new System.Drawing.Point(67, 125);
+            this.btnUpdateAsset.Name = "btnUpdateAsset";
+            this.btnUpdateAsset.Size = new System.Drawing.Size(91, 30);
+            this.btnUpdateAsset.TabIndex = 5;
+            this.btnUpdateAsset.Text = "Update Asset";
+            this.btnUpdateAsset.UseVisualStyleBackColor = true;
+            this.btnUpdateAsset.Click += new System.EventHandler(this.btnUpdateAsset_Click);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(227, 184);
+            this.ClientSize = new System.Drawing.Size(227, 280);
+            this.Controls.Add(this.btnUpdateAsset);
+            this.Controls.Add(this.btnDeleteAsset);
             this.Controls.Add(this.btnFindAssets);
             this.Controls.Add(this.btnAddAsset);
             this.Name = "HomeForm";
@@ -68,5 +92,7 @@
         #endregion
         private Button btnAddAsset;
         private Button btnFindAssets;
+        private Button btnDeleteAsset;
+        private Button btnUpdateAsset;
     }
 }

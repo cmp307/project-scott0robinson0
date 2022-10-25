@@ -31,5 +31,17 @@ namespace AssetTracker2
             RetrieveAssetForm retrieveAssetForm = new RetrieveAssetForm();
             retrieveAssetForm.ShowDialog();
         }
+
+        private void btnDeleteAsset_Click(object sender, EventArgs e)
+        {
+            DeleteAssetForm deleteAssetForm = new DeleteAssetForm();
+            deleteAssetForm.ShowDialog();
+        }
+
+        private void btnUpdateAsset_Click(object sender, EventArgs e)
+        {
+            UpdateAssetForm updateAssetForm = new UpdateAssetForm();
+            updateAssetForm.ShowDialog();
+        }
     }
 }

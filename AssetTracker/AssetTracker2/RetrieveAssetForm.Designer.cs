@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.btnLoad = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIPAddress = new System.Windows.Forms.TextBox();
             this.cbAllAssets = new System.Windows.Forms.CheckBox();
             this.lbIpAddress = new System.Windows.Forms.Label();
             this.lbAssetID = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAssetID = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -48,12 +48,13 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // textBox1
+            // txtIPAddress
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 23);
-            this.textBox1.TabIndex = 1;
+            this.txtIPAddress.Location = new System.Drawing.Point(12, 52);
+            this.txtIPAddress.Name = "txtIPAddress";
+            this.txtIPAddress.Size = new System.Drawing.Size(148, 23);
+            this.txtIPAddress.TabIndex = 1;
+            this.txtIPAddress.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtIPAddress_KeyUp);
             // 
             // cbAllAssets
             // 
@@ -64,6 +65,7 @@
             this.cbAllAssets.TabIndex = 3;
             this.cbAllAssets.Text = "All Assets";
             this.cbAllAssets.UseVisualStyleBackColor = true;
+            this.cbAllAssets.CheckedChanged += new System.EventHandler(this.cbAllAssets_CheckedChanged);
             // 
             // lbIpAddress
             // 
@@ -83,20 +85,22 @@
             this.lbAssetID.TabIndex = 6;
             this.lbAssetID.Text = "Asset ID";
             // 
-            // textBox2
+            // txtAssetID
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 23);
-            this.textBox2.TabIndex = 5;
+            this.txtAssetID.Location = new System.Drawing.Point(12, 96);
+            this.txtAssetID.Name = "txtAssetID";
+            this.txtAssetID.Size = new System.Drawing.Size(148, 23);
+            this.txtAssetID.TabIndex = 5;
+            this.txtAssetID.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAssetID_KeyUp);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(166, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(174, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1143, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(1135, 426);
             this.dataGridView1.TabIndex = 7;
             // 
             // RetrieveAssetForm
@@ -106,10 +110,10 @@
             this.ClientSize = new System.Drawing.Size(1321, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbAssetID);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtAssetID);
             this.Controls.Add(this.lbIpAddress);
             this.Controls.Add(this.cbAllAssets);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtIPAddress);
             this.Controls.Add(this.btnLoad);
             this.Name = "RetrieveAssetForm";
             this.Text = "Find Asset";
@@ -122,11 +126,11 @@
         #endregion
 
         private Button btnLoad;
-        private TextBox textBox1;
+        private TextBox txtIPAddress;
         private CheckBox cbAllAssets;
         private Label lbIpAddress;
         private Label lbAssetID;
-        private TextBox textBox2;
+        private TextBox txtAssetID;
         private DataGridView dataGridView1;
     }
 }

@@ -59,3 +59,5 @@ C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\As
 C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker.genruntimeconfig.cache
 C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\ref\AssetTracker.dll
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker.RetrieveAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker.DeleteAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker.UpdateAssetForm.resources

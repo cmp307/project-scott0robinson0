@@ -29,6 +29,34 @@ namespace Classes
             return cmd;
         }
 
+        public MySqlCommand SelectAssetById(int id)
+        {
+            string sql = @"
+                SELECT SGASSET.id, SGASSET.name, SGASSET.ipaddress, SGASSET.purchasedate, SGASSET.note, SGMODEL.name, SGMODEL.type, SGMODEL.manufacturer
+                FROM SGASSET
+                JOIN SGMODEL
+                ON SGASSET.model = SGMODEL.name
+                WHERE SGASSET.id = " + id;
+            MySqlCommand cmd;
+            cmd = new MySqlCommand(sql, Conn);
+            cmd.ExecuteNonQuery();
+            return cmd;
+        }
+
+        public MySqlCommand SelectAssetByIp(string ip)
+        {
+            string sql = @"
+                SELECT SGASSET.id, SGASSET.name, SGASSET.ipaddress, SGASSET.purchasedate, SGASSET.note, SGMODEL.name, SGMODEL.type, SGMODEL.manufacturer
+                FROM SGASSET
+                JOIN SGMODEL
+                ON SGASSET.model = SGMODEL.name
+                WHERE SGASSET.ipaddress = " + ip;
+            MySqlCommand cmd;
+            cmd = new MySqlCommand(sql, Conn);
+            cmd.ExecuteNonQuery();
+            return cmd;
+        }
+
         public MySqlCommand SelectModelByName(string name)
         {
             string sql = @"
@@ -77,6 +105,20 @@ namespace Classes
             string sql = @"INSERT INTO SGMODEL (name, type, manufacturer)
                            VALUES " + String.Format("('{0}', '{1}', '{2}')", name, type, manufacturer);
 
+            MySqlCommand cmd = new MySqlCommand(sql, Conn);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void DeleteAssetById(int id)
+        {
+            string sql = "DELETE FROM SGASSET WHERE id = " + id;
+            MySqlCommand cmd = new MySqlCommand(sql, Conn);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void DeleteAssetByIp(string ip)
+        {
+            string sql = String.Format("DELETE FROM SGASSET WHERE ipaddress = '{0}'",  ip);
             MySqlCommand cmd = new MySqlCommand(sql, Conn);
             cmd.ExecuteNonQuery();
         }

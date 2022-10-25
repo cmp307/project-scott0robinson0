@@ -14,28 +14,55 @@ namespace AssetTracker
 {
     public partial class RetrieveAssetForm : Form
     {
-        DataTable dataTable;
-        MySqlDataAdapter adapter;
+        private DataTable dataTable;
+        private MySqlDataAdapter adapter;
+        private Database database;
+        private string idtext;
+        private string iptext;
+
         public RetrieveAssetForm()
         {
             InitializeComponent();
-            this.LoadData();
-            //dataTable = new DataTable();
-            //adapter = new MySqlDataAdapter();
+            dataTable = new DataTable();
+            adapter = new MySqlDataAdapter();
+            database = new Database();
+            idtext = "";
+            iptext = "";
         }
 
-        private void LoadData()
+        private void btnLoad_Click(object sender, EventArgs e)
         {
             try
             {
-                dataTable = new DataTable();
-                Database database = new Database();
-                database.Conn.Open();
-                adapter = new MySqlDataAdapter(database.SelectAllAssets());
                 database.Conn.Close();
+                dataTable.Clear();
+                if (cbAllAssets.Checked)
+                {                    
+                    database.Conn.Open();
+                    adapter.SelectCommand = database.SelectAllAssets();
+                    database.Conn.Close();
 
-                adapter.Fill(dataTable);
-                dataGridView1.DataSource = dataTable.DefaultView;
+                    adapter.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable.DefaultView;
+                }
+                else if (txtAssetID.Text != "")
+                {
+                    database.Conn.Open();
+                    adapter.SelectCommand = database.SelectAssetById(int.Parse(txtAssetID.Text));
+                    database.Conn.Close();
+
+                    adapter.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable.DefaultView;
+                }
+                else if (txtIPAddress.Text != "")
+                {
+                    database.Conn.Open();
+                    adapter.SelectCommand = database.SelectAssetByIp(txtIPAddress.Text);
+                    database.Conn.Close();
+
+                    adapter.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable.DefaultView;
+                }
             }
             catch (Exception ex)
             {
@@ -43,9 +70,61 @@ namespace AssetTracker
             }
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void cbAllAssets_CheckedChanged(object sender, EventArgs e)
         {
-            this.LoadData();
+            if (cbAllAssets.Checked)
+            {
+                txtAssetID.Enabled = false;
+                txtIPAddress.Enabled = false;
+                txtAssetID.Text = "";
+                txtIPAddress.Text = "";
+            }
+            else
+            {
+                if (iptext == "")
+                {
+                    txtAssetID.Enabled = true;
+                    txtAssetID.Text = idtext;
+                }
+
+                if (idtext == "")
+                {
+                    txtIPAddress.Enabled = true;
+                    txtIPAddress.Text = iptext;
+                }
+            }
+        }
+
+        private void txtIPAddress_KeyUp(object sender, KeyEventArgs e)
+        {
+            iptext = txtIPAddress.Text;
+
+            if (iptext != "")
+            {
+                txtAssetID.Text = "";
+                txtAssetID.Enabled = false;
+            }
+            else
+            {
+                txtAssetID.Text = idtext;
+                txtAssetID.Enabled = true;
+            }
+        }
+
+        private void txtAssetID_KeyUp(object sender, KeyEventArgs e)
+        {
+            idtext = txtAssetID.Text;
+
+            if (idtext != "")
+            {
+                txtIPAddress.Text = "";
+                txtIPAddress.Enabled = false;
+            }
+            else
+            {
+                txtIPAddress.Text = iptext;
+                txtIPAddress.Enabled = true;
+            }
         }
     }
 }
