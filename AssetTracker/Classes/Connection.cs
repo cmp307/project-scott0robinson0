@@ -14,8 +14,8 @@ namespace Classes
 
         public void Connect()
         {
-            //Conn = new MySqlConnection("Server=https://lochnagar.abertay.ac.uk/; Database=sql2203326; Uid=sql2203326; Pwd=iVGGteQzELnb;");
-            Conn = new MySqlConnection("Server=localhost; Database=sql2203326; Uid=root; Pwd=;");
+            Conn = new MySqlConnection("Server=https://lochnagar.abertay.ac.uk/; Database=sql2203326; Uid=sql2203326; Pwd=iVGGteQzELnb;");
+            //Conn = new MySqlConnection("Server=localhost; Database=sql2203326; Uid=root; Pwd=;");
         }
     }
 }
