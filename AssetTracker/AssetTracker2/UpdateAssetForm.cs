@@ -14,9 +14,12 @@ namespace AssetTracker
     public partial class UpdateAssetForm : Form
     {
         private string PurchaseDate;
+        private Database database;
+
         public UpdateAssetForm()
         {
             InitializeComponent();
+            database = new Database();
             PurchaseDate = "";
         }
 
@@ -42,7 +45,7 @@ namespace AssetTracker
                 if (txtManufacturer.Text == "")
                     throw new Exception("Manufacturer is mandatory.");
 
-                Database database = new();
+                
                 database.Conn.Open();
                 if (database.ModelExists(txtModel.Text))
                     if (dtpPurchaseDate.Enabled)
