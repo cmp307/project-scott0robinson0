@@ -7,5 +7,8 @@
     <Compile Update="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="RetrieveAssetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
