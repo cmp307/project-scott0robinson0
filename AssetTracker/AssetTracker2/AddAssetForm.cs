@@ -126,6 +126,8 @@ namespace AssetTracker2
                     txtType.Text += process["SystemType"];
                 }
             }
+            txtModel.Focus();
+            this.ActiveControl = null;
         }
     }
 }
