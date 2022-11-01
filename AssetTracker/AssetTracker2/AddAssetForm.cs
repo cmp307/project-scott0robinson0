@@ -121,9 +121,9 @@ namespace AssetTracker2
                 foreach (System.Management.ManagementObject process in searcher.Get())
                 {
                     process.Get();
-                    txtManufacturer.Text += process["Manufacturer"];
-                    txtModel.Text += process["Model"];
-                    txtType.Text += process["SystemType"];
+                    txtManufacturer.Text = process["Manufacturer"].ToString();
+                    txtModel.Text = process["Model"].ToString();
+                    txtType.Text = process["SystemType"].ToString();
                 }
             }
             txtModel.Focus();

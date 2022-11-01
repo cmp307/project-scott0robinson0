@@ -66,16 +66,22 @@ namespace AssetTracker
                 if (idtext != "")
                 {
                     database.Conn.Open();
-                    database.DeleteAssetById(int.Parse(idtext));
+                    int deleted = database.DeleteAssetById(int.Parse(idtext));
                     database.Conn.Close();
-                    //MessageBox.Show("Asset " + idtext + " deleted.");
+                    if (deleted > 0)
+                        MessageBox.Show("Deleted asset: " + idtext);
+                    else
+                        MessageBox.Show("Asset " + idtext + " did not exist.");
                 }
                 else if (iptext != "")
                 {
                     database.Conn.Open();
-                    database.DeleteAssetByIp(iptext);
+                    int deleted = database.DeleteAssetByIp(iptext);
                     database.Conn.Close();
-                    //MessageBox.Show("Asset " + iptext + " deleted.");
+                    if (deleted > 0)
+                        MessageBox.Show("Deleted asset: " + iptext);
+                    else
+                        MessageBox.Show("Asset " + iptext + " did not exist.");
                 }
             }
             catch (Exception ex)

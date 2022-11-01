@@ -36,6 +36,7 @@ namespace AssetTracker
             {
                 database.Conn.Close();
                 dataTable.Clear();
+                dataTable.Columns.Clear();
                 if (cbAllAssets.Checked)
                 {                    
                     database.Conn.Open();

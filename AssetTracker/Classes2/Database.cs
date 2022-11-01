@@ -32,7 +32,7 @@ namespace Classes
         public MySqlCommand SelectAssetById(int id)
         {
             string sql = @"
-                SELECT SGASSET.id, SGASSET.name, SGASSET.ipaddress, SGASSET.purchasedate, SGASSET.note, SGMODEL.name, SGMODEL.type, SGMODEL.manufacturer
+                SELECT SGASSET.id 'ID', SGASSET.name 'Name', SGASSET.ipaddress 'IP Address', SGASSET.purchasedate 'Purchase Date', SGASSET.note 'Note', SGMODEL.name 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
                 FROM SGASSET
                 JOIN SGMODEL
                 ON SGASSET.model = SGMODEL.name
@@ -45,12 +45,12 @@ namespace Classes
 
         public MySqlCommand SelectAssetByIp(string ip)
         {
-            string sql = @"
-                SELECT SGASSET.id, SGASSET.name, SGASSET.ipaddress, SGASSET.purchasedate, SGASSET.note, SGMODEL.name, SGMODEL.type, SGMODEL.manufacturer
+            string sql = String.Format(@"
+                SELECT SGASSET.id 'ID', SGASSET.name 'Name', SGASSET.ipaddress 'IP Address', SGASSET.purchasedate 'Purchase Date', SGASSET.note 'Note', SGMODEL.name 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
                 FROM SGASSET
                 JOIN SGMODEL
                 ON SGASSET.model = SGMODEL.name
-                WHERE SGASSET.ipaddress = " + ip;
+                WHERE SGASSET.ipaddress = '{0}'", ip);
             MySqlCommand cmd;
             cmd = new MySqlCommand(sql, Conn);
             cmd.ExecuteNonQuery();
@@ -109,18 +109,18 @@ namespace Classes
             cmd.ExecuteNonQuery();
         }
 
-        public void DeleteAssetById(int id)
+        public int DeleteAssetById(int id)
         {
             string sql = "DELETE FROM SGASSET WHERE id = " + id;
             MySqlCommand cmd = new MySqlCommand(sql, Conn);
-            cmd.ExecuteNonQuery();
+            return cmd.ExecuteNonQuery();
         }
 
-        public void DeleteAssetByIp(string ip)
+        public int DeleteAssetByIp(string ip)
         {
             string sql = String.Format("DELETE FROM SGASSET WHERE ipaddress = '{0}'",  ip);
             MySqlCommand cmd = new MySqlCommand(sql, Conn);
-            cmd.ExecuteNonQuery();
+            return cmd.ExecuteNonQuery();
         }
 
         public bool ModelExists(string name)

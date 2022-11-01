@@ -66,6 +66,7 @@
             // 
             // btnUpdateAsset
             // 
+            this.btnUpdateAsset.Enabled = false;
             this.btnUpdateAsset.Location = new System.Drawing.Point(67, 125);
             this.btnUpdateAsset.Name = "btnUpdateAsset";
             this.btnUpdateAsset.Size = new System.Drawing.Size(91, 30);
@@ -78,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(227, 280);
+            this.ClientSize = new System.Drawing.Size(227, 263);
             this.Controls.Add(this.btnUpdateAsset);
             this.Controls.Add(this.btnDeleteAsset);
             this.Controls.Add(this.btnFindAssets);

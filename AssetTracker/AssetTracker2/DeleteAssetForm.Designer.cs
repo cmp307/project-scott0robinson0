@@ -37,7 +37,7 @@
             // 
             // txtIPAddress
             // 
-            this.txtIPAddress.Location = new System.Drawing.Point(36, 54);
+            this.txtIPAddress.Location = new System.Drawing.Point(54, 74);
             this.txtIPAddress.Name = "txtIPAddress";
             this.txtIPAddress.Size = new System.Drawing.Size(132, 23);
             this.txtIPAddress.TabIndex = 0;
@@ -46,7 +46,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 36);
+            this.label1.Location = new System.Drawing.Point(54, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 15);
             this.label1.TabIndex = 1;
@@ -55,7 +55,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 80);
+            this.label2.Location = new System.Drawing.Point(54, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 15);
             this.label2.TabIndex = 3;
@@ -63,7 +63,7 @@
             // 
             // txtAssetID
             // 
-            this.txtAssetID.Location = new System.Drawing.Point(36, 98);
+            this.txtAssetID.Location = new System.Drawing.Point(54, 118);
             this.txtAssetID.Name = "txtAssetID";
             this.txtAssetID.Size = new System.Drawing.Size(132, 23);
             this.txtAssetID.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(36, 127);
+            this.btnConfirm.Location = new System.Drawing.Point(54, 147);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(132, 23);
             this.btnConfirm.TabIndex = 4;
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(204, 194);
+            this.ClientSize = new System.Drawing.Size(249, 228);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAssetID);
