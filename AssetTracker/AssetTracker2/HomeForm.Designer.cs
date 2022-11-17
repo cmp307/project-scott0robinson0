@@ -66,7 +66,6 @@
             // 
             // btnUpdateAsset
             // 
-            this.btnUpdateAsset.Enabled = false;
             this.btnUpdateAsset.Location = new System.Drawing.Point(67, 125);
             this.btnUpdateAsset.Name = "btnUpdateAsset";
             this.btnUpdateAsset.Size = new System.Drawing.Size(91, 30);
