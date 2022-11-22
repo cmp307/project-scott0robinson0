@@ -1,11 +1,9 @@
-﻿using MySql.Data.MySqlClient;
-using MySql.Data.Types;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace Classes
 {
@@ -13,7 +11,7 @@ namespace Classes
     {
         public MySqlConnection Conn;
 
-        public void Connect()
+        public Database()
         {
             Conn = new MySqlConnection("Server=lochnagar.abertay.ac.uk; Database=sql2203326; Uid=sql2203326; Pwd=iVGGteQzELna;");
         }
@@ -27,6 +25,34 @@ namespace Classes
             ";
 
             MySqlCommand cmd = new MySqlCommand(sql, Conn);
+            cmd.ExecuteNonQuery();
+            return cmd;
+        }
+
+        public MySqlCommand SelectAssetById(int id)
+        {
+            string sql = @"
+                SELECT SGASSET.id 'ID', SGASSET.name 'Name', SGASSET.ipaddress 'IP Address', SGASSET.purchasedate 'Purchase Date', SGASSET.note 'Note', SGMODEL.name 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
+                FROM SGASSET
+                JOIN SGMODEL
+                ON SGASSET.model = SGMODEL.name
+                WHERE SGASSET.id = " + id;
+            MySqlCommand cmd;
+            cmd = new MySqlCommand(sql, Conn);
+            cmd.ExecuteNonQuery();
+            return cmd;
+        }
+
+        public MySqlCommand SelectAssetByIp(string ip)
+        {
+            string sql = String.Format(@"
+                SELECT SGASSET.id 'ID', SGASSET.name 'Name', SGASSET.ipaddress 'IP Address', SGASSET.purchasedate 'Purchase Date', SGASSET.note 'Note', SGMODEL.name 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
+                FROM SGASSET
+                JOIN SGMODEL
+                ON SGASSET.model = SGMODEL.name
+                WHERE SGASSET.ipaddress = '{0}'", ip);
+            MySqlCommand cmd;
+            cmd = new MySqlCommand(sql, Conn);
             cmd.ExecuteNonQuery();
             return cmd;
         }
@@ -81,6 +107,20 @@ namespace Classes
 
             MySqlCommand cmd = new MySqlCommand(sql, Conn);
             cmd.ExecuteNonQuery();
+        }
+
+        public int DeleteAssetById(int id)
+        {
+            string sql = "DELETE FROM SGASSET WHERE id = " + id;
+            MySqlCommand cmd = new MySqlCommand(sql, Conn);
+            return cmd.ExecuteNonQuery();
+        }
+
+        public int DeleteAssetByIp(string ip)
+        {
+            string sql = String.Format("DELETE FROM SGASSET WHERE ipaddress = '{0}'",  ip);
+            MySqlCommand cmd = new MySqlCommand(sql, Conn);
+            return cmd.ExecuteNonQuery();
         }
 
         public bool ModelExists(string name)

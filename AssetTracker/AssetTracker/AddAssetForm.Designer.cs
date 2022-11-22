@@ -1,4 +1,4 @@
-﻿namespace AssetTracker
+﻿namespace AssetTracker2
 {
     partial class AddAssetForm
     {
@@ -28,245 +28,256 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtAssetName = new System.Windows.Forms.TextBox();
-            this.lblAssetName = new System.Windows.Forms.Label();
-            this.lblIPAddress = new System.Windows.Forms.Label();
-            this.txtIPAddress = new System.Windows.Forms.TextBox();
-            this.dtpPurchaseDate = new System.Windows.Forms.DateTimePicker();
-            this.lblPurchaseDate = new System.Windows.Forms.Label();
-            this.lblNote = new System.Windows.Forms.Label();
-            this.txtNote = new System.Windows.Forms.TextBox();
-            this.lblModel = new System.Windows.Forms.Label();
-            this.txtModel = new System.Windows.Forms.TextBox();
-            this.lblType = new System.Windows.Forms.Label();
-            this.txtType = new System.Windows.Forms.TextBox();
-            this.lblManufacturer = new System.Windows.Forms.Label();
-            this.txtManufacturer = new System.Windows.Forms.TextBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtAssetName = new System.Windows.Forms.TextBox();
+            this.txtIPAddress = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.cbPurchaseDate = new System.Windows.Forms.CheckBox();
+            this.txtNote = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtType = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtManufacturer = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.dtpPurchaseDate = new System.Windows.Forms.DateTimePicker();
+            this.txtModel = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnLoadData = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Name";
             // 
             // txtAssetName
             // 
-            this.txtAssetName.Location = new System.Drawing.Point(50, 35);
+            this.txtAssetName.Location = new System.Drawing.Point(43, 77);
             this.txtAssetName.Name = "txtAssetName";
-            this.txtAssetName.Size = new System.Drawing.Size(175, 20);
-            this.txtAssetName.TabIndex = 0;
-            // 
-            // lblAssetName
-            // 
-            this.lblAssetName.AutoSize = true;
-            this.lblAssetName.Location = new System.Drawing.Point(47, 19);
-            this.lblAssetName.Name = "lblAssetName";
-            this.lblAssetName.Size = new System.Drawing.Size(35, 13);
-            this.lblAssetName.TabIndex = 1;
-            this.lblAssetName.Text = "Name";
-            // 
-            // lblIPAddress
-            // 
-            this.lblIPAddress.AutoSize = true;
-            this.lblIPAddress.Location = new System.Drawing.Point(47, 58);
-            this.lblIPAddress.Name = "lblIPAddress";
-            this.lblIPAddress.Size = new System.Drawing.Size(58, 13);
-            this.lblIPAddress.TabIndex = 3;
-            this.lblIPAddress.Text = "IP Address";
+            this.txtAssetName.Size = new System.Drawing.Size(191, 23);
+            this.txtAssetName.TabIndex = 1;
             // 
             // txtIPAddress
             // 
-            this.txtIPAddress.Location = new System.Drawing.Point(50, 74);
+            this.txtIPAddress.Location = new System.Drawing.Point(43, 121);
             this.txtIPAddress.Name = "txtIPAddress";
-            this.txtIPAddress.Size = new System.Drawing.Size(175, 20);
-            this.txtIPAddress.TabIndex = 2;
+            this.txtIPAddress.Size = new System.Drawing.Size(191, 23);
+            this.txtIPAddress.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(43, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "IP Address";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(43, 147);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 15);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Purchase Date";
+            // 
+            // cbPurchaseDate
+            // 
+            this.cbPurchaseDate.AutoSize = true;
+            this.cbPurchaseDate.Location = new System.Drawing.Point(43, 165);
+            this.cbPurchaseDate.Name = "cbPurchaseDate";
+            this.cbPurchaseDate.Size = new System.Drawing.Size(15, 14);
+            this.cbPurchaseDate.TabIndex = 6;
+            this.cbPurchaseDate.UseVisualStyleBackColor = true;
+            this.cbPurchaseDate.CheckedChanged += new System.EventHandler(this.cbPurchaseDate_CheckedChanged);
+            // 
+            // txtNote
+            // 
+            this.txtNote.Location = new System.Drawing.Point(43, 229);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(191, 57);
+            this.txtNote.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(43, 211);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Note";
+            // 
+            // txtType
+            // 
+            this.txtType.Location = new System.Drawing.Point(43, 351);
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(191, 23);
+            this.txtType.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(43, 333);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 15);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Type";
+            // 
+            // txtManufacturer
+            // 
+            this.txtManufacturer.Location = new System.Drawing.Point(43, 395);
+            this.txtManufacturer.Name = "txtManufacturer";
+            this.txtManufacturer.Size = new System.Drawing.Size(191, 23);
+            this.txtManufacturer.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(43, 377);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 15);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Manufacturer";
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(43, 424);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(191, 23);
+            this.btnSubmit.TabIndex = 13;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // dtpPurchaseDate
             // 
             this.dtpPurchaseDate.CustomFormat = " ";
             this.dtpPurchaseDate.Enabled = false;
             this.dtpPurchaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpPurchaseDate.Location = new System.Drawing.Point(50, 133);
+            this.dtpPurchaseDate.Location = new System.Drawing.Point(43, 185);
             this.dtpPurchaseDate.Name = "dtpPurchaseDate";
-            this.dtpPurchaseDate.Size = new System.Drawing.Size(175, 20);
-            this.dtpPurchaseDate.TabIndex = 6;
-            this.dtpPurchaseDate.Value = new System.DateTime(2022, 10, 21, 20, 52, 40, 0);
-            // 
-            // lblPurchaseDate
-            // 
-            this.lblPurchaseDate.AutoSize = true;
-            this.lblPurchaseDate.Location = new System.Drawing.Point(47, 97);
-            this.lblPurchaseDate.Name = "lblPurchaseDate";
-            this.lblPurchaseDate.Size = new System.Drawing.Size(78, 13);
-            this.lblPurchaseDate.TabIndex = 7;
-            this.lblPurchaseDate.Text = "Purchase Date";
-            // 
-            // lblNote
-            // 
-            this.lblNote.AutoSize = true;
-            this.lblNote.Location = new System.Drawing.Point(47, 156);
-            this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(30, 13);
-            this.lblNote.TabIndex = 9;
-            this.lblNote.Text = "Note";
-            // 
-            // txtNote
-            // 
-            this.txtNote.Location = new System.Drawing.Point(50, 172);
-            this.txtNote.Multiline = true;
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(175, 42);
-            this.txtNote.TabIndex = 8;
-            // 
-            // lblModel
-            // 
-            this.lblModel.AutoSize = true;
-            this.lblModel.Location = new System.Drawing.Point(47, 217);
-            this.lblModel.Name = "lblModel";
-            this.lblModel.Size = new System.Drawing.Size(36, 13);
-            this.lblModel.TabIndex = 11;
-            this.lblModel.Text = "Model";
+            this.dtpPurchaseDate.Size = new System.Drawing.Size(191, 23);
+            this.dtpPurchaseDate.TabIndex = 14;
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(50, 233);
+            this.txtModel.Location = new System.Drawing.Point(43, 307);
             this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(175, 20);
-            this.txtModel.TabIndex = 10;
+            this.txtModel.Size = new System.Drawing.Size(191, 23);
+            this.txtModel.TabIndex = 16;
             this.txtModel.Leave += new System.EventHandler(this.txtModel_Leave);
             // 
-            // lblType
+            // label7
             // 
-            this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(47, 256);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(31, 13);
-            this.lblType.TabIndex = 13;
-            this.lblType.Text = "Type";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(43, 289);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 15);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Model";
             // 
-            // txtType
+            // label8
             // 
-            this.txtType.Location = new System.Drawing.Point(50, 272);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(175, 20);
-            this.txtType.TabIndex = 12;
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(234, 85);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(12, 15);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "*";
             // 
-            // lblManufacturer
+            // label9
             // 
-            this.lblManufacturer.AutoSize = true;
-            this.lblManufacturer.Location = new System.Drawing.Point(47, 295);
-            this.lblManufacturer.Name = "lblManufacturer";
-            this.lblManufacturer.Size = new System.Drawing.Size(70, 13);
-            this.lblManufacturer.TabIndex = 15;
-            this.lblManufacturer.Text = "Manufacturer";
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(234, 315);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(12, 15);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "*";
             // 
-            // txtManufacturer
+            // label10
             // 
-            this.txtManufacturer.Location = new System.Drawing.Point(50, 311);
-            this.txtManufacturer.Name = "txtManufacturer";
-            this.txtManufacturer.Size = new System.Drawing.Size(175, 20);
-            this.txtManufacturer.TabIndex = 14;
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(234, 403);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(12, 15);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "*";
             // 
-            // btnSubmit
+            // label11
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(50, 337);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(175, 23);
-            this.btnSubmit.TabIndex = 16;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(234, 359);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(12, 15);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "*";
             // 
-            // label1
+            // label12
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(225, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(11, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "*";
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(234, 129);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(12, 15);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "*";
             // 
-            // label2
+            // btnLoadData
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(225, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(11, 13);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "*";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(225, 318);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(11, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "*";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(225, 279);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(11, 13);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "*";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(225, 240);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(11, 13);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "*";
-            // 
-            // cbPurchaseDate
-            // 
-            this.cbPurchaseDate.AutoSize = true;
-            this.cbPurchaseDate.Location = new System.Drawing.Point(50, 113);
-            this.cbPurchaseDate.Name = "cbPurchaseDate";
-            this.cbPurchaseDate.Size = new System.Drawing.Size(15, 14);
-            this.cbPurchaseDate.TabIndex = 22;
-            this.cbPurchaseDate.UseVisualStyleBackColor = true;
-            this.cbPurchaseDate.CheckedChanged += new System.EventHandler(this.cbPurchaseDate_CheckedChanged);
+            this.btnLoadData.Location = new System.Drawing.Point(43, 35);
+            this.btnLoadData.Name = "btnLoadData";
+            this.btnLoadData.Size = new System.Drawing.Size(191, 23);
+            this.btnLoadData.TabIndex = 22;
+            this.btnLoadData.Text = "Load Data";
+            this.btnLoadData.UseVisualStyleBackColor = true;
+            this.btnLoadData.Click += new System.EventHandler(this.btnLoadData_Click);
             // 
             // AddAssetForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(280, 404);
-            this.Controls.Add(this.cbPurchaseDate);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.lblManufacturer);
-            this.Controls.Add(this.txtManufacturer);
-            this.Controls.Add(this.lblType);
-            this.Controls.Add(this.txtType);
-            this.Controls.Add(this.lblModel);
+            this.ClientSize = new System.Drawing.Size(283, 487);
+            this.Controls.Add(this.btnLoadData);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtModel);
-            this.Controls.Add(this.lblNote);
-            this.Controls.Add(this.txtNote);
-            this.Controls.Add(this.lblPurchaseDate);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dtpPurchaseDate);
-            this.Controls.Add(this.lblIPAddress);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.txtManufacturer);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtType);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtNote);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cbPurchaseDate);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtIPAddress);
-            this.Controls.Add(this.lblAssetName);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAssetName);
+            this.Controls.Add(this.label1);
             this.Name = "AddAssetForm";
-            this.Text = "AddAssetForm";
+            this.Text = "Add Asset";
             this.Click += new System.EventHandler(this.AddAssetForm_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -275,26 +286,27 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtAssetName;
-        private System.Windows.Forms.Label lblAssetName;
-        private System.Windows.Forms.Label lblIPAddress;
-        private System.Windows.Forms.TextBox txtIPAddress;
-        private System.Windows.Forms.DateTimePicker dtpPurchaseDate;
-        private System.Windows.Forms.Label lblPurchaseDate;
-        private System.Windows.Forms.Label lblNote;
-        private System.Windows.Forms.TextBox txtNote;
-        private System.Windows.Forms.Label lblModel;
-        private System.Windows.Forms.TextBox txtModel;
-        private System.Windows.Forms.Label lblType;
-        private System.Windows.Forms.TextBox txtType;
-        private System.Windows.Forms.Label lblManufacturer;
-        private System.Windows.Forms.TextBox txtManufacturer;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox cbPurchaseDate;
+        private Label label1;
+        private TextBox txtAssetName;
+        private TextBox txtIPAddress;
+        private Label label2;
+        private Label label3;
+        private CheckBox cbPurchaseDate;
+        private TextBox txtNote;
+        private Label label4;
+        private TextBox txtType;
+        private Label label5;
+        private TextBox txtManufacturer;
+        private Label label6;
+        private Button btnSubmit;
+        private DateTimePicker dtpPurchaseDate;
+        private TextBox txtModel;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Button btnLoadData;
     }
 }
