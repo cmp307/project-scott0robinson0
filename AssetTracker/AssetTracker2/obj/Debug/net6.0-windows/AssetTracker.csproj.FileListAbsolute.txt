@@ -61,3 +61,5 @@ C:\Users\scott\OneDrive\Documents\GitHub\project-scott0robinson0\AssetTracker\As
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker.RetrieveAssetForm.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker.DeleteAssetForm.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker.UpdateAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\obj\Debug\net6.0-windows\AssetTracker.LoginForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker2\bin\Debug\net6.0-windows\BCrypt.Net-Next.dll

@@ -1,3 +1,5 @@
+using AssetTracker;
+
 namespace AssetTracker2
 {
     internal static class Program
@@ -11,7 +13,14 @@ namespace AssetTracker2
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new HomeForm());
+
+            DialogResult result;
+
+            using (var loginForm = new LoginForm())
+                result = loginForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+                Application.Run(new HomeForm());
         }
     }
 }
