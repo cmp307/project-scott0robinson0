@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,8 +10,15 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    public static class GeneralDB
+    public abstract class GeneralDB
     {
+        public MySqlConnection Conn;
+
+        protected GeneralDB()
+        {
+            Conn = new MySqlConnection("Server=lochnagar.abertay.ac.uk; Database=sql2203326; Uid=sql2203326; Pwd=iVGGteQzELna;");
+        }
+
         //public static MySqlCommand CustomQuery(string condition)
         //{
         //    Connection connection = new Connection();
@@ -31,6 +39,16 @@ namespace Classes
         //    return command;
         //}
 
+        protected void Insert(string tableName, List<string> columns, List<string> values)
+        {
+            string columnsString = String.Join(", ", columns);
+            string valuesString = "'" + String.Join("', '", values) + "'";
+            string sql = String.Format("INSERT INTO {0} ({1}) VALUES ({2})", tableName, columnsString, valuesString);
+            MySqlCommand command;
+            command = new MySqlCommand(sql, Conn);
+            command.ExecuteNonQuery();
+        }
+
         //public static MySqlCommand SelectAll(string tableName)
         //{
         //    Connection connection = new Connection();
@@ -38,7 +56,7 @@ namespace Classes
         //    connection.Connect();
         //    connection.Conn.Open();
         //    command = new MySqlCommand("SELECT * FROM " + tableName, connection.Conn);
-        //    command.ExecuteNonQuery();            
+        //    command.ExecuteNonQuery();
         //    connection.Conn.Close();
         //    return command;
         //}
@@ -55,16 +73,7 @@ namespace Classes
         //    return command;
         //}
 
-        //public static void Insert(string tableName, string columns, string values)
-        //{
-        //    Connection connection = new Connection();
-        //    MySqlCommand command;
-        //    connection.Connect();
-        //    connection.Conn.Open();
-        //    command = new MySqlCommand("INSERT INTO " + tableName + " (" + columns + ") VALUES (" + values + ")", connection.Conn);
-        //    command.ExecuteNonQuery();
-        //    connection.Conn.Close();
-        //}
+
 
         //public static void DeleteRowByPK(string tableName, string condition)
         //{

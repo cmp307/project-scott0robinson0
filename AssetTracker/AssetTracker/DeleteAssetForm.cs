@@ -14,14 +14,14 @@ namespace AssetTracker
 {
     public partial class DeleteAssetForm : Form
     {
-        private Database database;
+        private HardwareAssetDB database;
         private string idtext;
         private string iptext;
 
         public DeleteAssetForm()
         {
             InitializeComponent();
-            database = new Database();
+            database = new HardwareAssetDB();
             idtext = "";
             iptext = "";
         }

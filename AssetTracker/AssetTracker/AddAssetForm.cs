@@ -44,7 +44,7 @@ namespace AssetTracker2
                 if (txtManufacturer.Text == "")
                     throw new Exception("Manufacturer is mandatory.");
 
-                Database database = new();
+                HardwareAssetDB database = new();
                 database.Conn.Open();
                 if (database.ModelExists(txtModel.Text))
                     if (dtpPurchaseDate.Enabled)
@@ -67,7 +67,7 @@ namespace AssetTracker2
 
         private void txtModel_Leave(object sender, EventArgs e)
         {
-            Database database = new();
+            HardwareAssetDB database = new();
             database.Conn.Open();
             MySqlCommand command = database.SelectModelByName(txtModel.Text);
             MySqlDataReader reader = command.ExecuteReader();

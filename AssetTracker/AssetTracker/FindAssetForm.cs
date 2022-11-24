@@ -16,7 +16,7 @@ namespace AssetTracker
     {
         private DataTable dataTable;
         private MySqlDataAdapter adapter;
-        private Database database;
+        private HardwareAssetDB database;
         private string idtext;
         private string iptext;
 
@@ -25,7 +25,7 @@ namespace AssetTracker
             InitializeComponent();
             dataTable = new DataTable();
             adapter = new MySqlDataAdapter();
-            database = new Database();
+            database = new HardwareAssetDB();
             idtext = "";
             iptext = "";
         }

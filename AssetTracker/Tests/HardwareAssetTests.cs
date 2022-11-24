@@ -1,9 +1,7 @@
-using Classes;
-
 namespace Tests
 {
     [TestClass]
-    public class AssetTests
+    public class HardwareAssetTests
     {
 
         [TestMethod]

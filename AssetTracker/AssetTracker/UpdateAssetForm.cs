@@ -14,12 +14,12 @@ namespace AssetTracker
     public partial class UpdateAssetForm : Form
     {
         private string PurchaseDate;
-        private Database database;
+        private HardwareAssetDB database;
 
         public UpdateAssetForm()
         {
             InitializeComponent();
-            database = new Database();
+            database = new HardwareAssetDB();
             PurchaseDate = "";
         }
 

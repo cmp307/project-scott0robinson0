@@ -7,13 +7,27 @@ using MySql.Data.MySqlClient;
 
 namespace Classes
 {
-    public class Database
+    public class HardwareAssetDB : GeneralDB
     {
-        public MySqlConnection Conn;
+        //public HardwareAssetDB()
+        //{
+        //    Conn = new MySqlConnection("Server=lochnagar.abertay.ac.uk; Database=sql2203326; Uid=sql2203326; Pwd=iVGGteQzELna;");
+        //}
 
-        public Database()
+        public void AddAsset(HardwareAsset hardwareAsset)
         {
-            Conn = new MySqlConnection("Server=lochnagar.abertay.ac.uk; Database=sql2203326; Uid=sql2203326; Pwd=iVGGteQzELna;");
+            
+            MySqlCommand cmd = new MySqlCommand(sql, Conn);
+            cmd.ExecuteNonQuery();
+        }
+
+        private void AddModel(string name, string type, string manufacturer)
+        {
+            string sql = @"INSERT INTO SGMODEL (name, type, manufacturer)
+                           VALUES " + String.Format("('{0}', '{1}', '{2}')", name, type, manufacturer);
+
+            MySqlCommand cmd = new MySqlCommand(sql, Conn);
+            cmd.ExecuteNonQuery();
         }
 
         public MySqlCommand SelectAllAssets()
@@ -70,14 +84,7 @@ namespace Classes
             return cmd;
         }
 
-        public void AddAsset(string name, string ipaddress, string purchasedate, string note, string model)
-        {
-            string sql = @"INSERT INTO SGASSET (name, ipaddress, purchasedate, note, model)
-                           VALUES " + String.Format("('{0}', '{1}', '{2}', '{3}', '{4}')", name, ipaddress, purchasedate, note, model);
 
-            MySqlCommand cmd = new MySqlCommand(sql, Conn);
-            cmd.ExecuteNonQuery();
-        }
 
         public void AddAsset(string name, string ipaddress, string note, string model)
         {
