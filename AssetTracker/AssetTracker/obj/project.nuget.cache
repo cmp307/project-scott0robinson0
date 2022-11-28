@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "c0SLecRnK7zkNaLMVuN1MsaszpdHSVOKDVicTr834+y7hPKmWx2d4FdDKhVWquyU3CBgYn3Aa6PnyqY0T3V38g==",
+  "dgSpecHash": "SVxK6SkoXoht59FGVNF3e70dRMfnV4OQK344owzRPa8XYDiCR9OWn/qlLZnW77LL2lg7A9YcV+97egJKH2Z/0w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Scott\\source\\repos\\project\\AssetTracker\\AssetTracker\\AssetTracker.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Scott\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\k4os.compression.lz4.streams\\1.2.6\\k4os.compression.lz4.streams.1.2.6.nupkg.sha512",

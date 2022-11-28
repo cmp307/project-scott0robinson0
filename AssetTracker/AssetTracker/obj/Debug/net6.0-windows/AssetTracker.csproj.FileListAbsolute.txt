@@ -66,6 +66,7 @@ C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-w
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-windows\AssetTracker.runtimeconfig.json
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-windows\AssetTracker.dll
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-windows\AssetTracker.pdb
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-windows\BCrypt.Net-Next.dll
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-windows\Google.Protobuf.dll
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
@@ -94,3 +95,4 @@ C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-w
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.pdb
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.genruntimeconfig.cache
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\ref\AssetTracker.dll
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.UpdateChooseAssetForm.resources

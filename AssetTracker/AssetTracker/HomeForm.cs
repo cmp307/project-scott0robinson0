@@ -22,26 +22,26 @@ namespace AssetTracker2
 
         private void btnAddAsset_Click(object sender, EventArgs e)
         {
-            AddAssetForm addAssetForm = new AddAssetForm();
+            AddAssetForm addAssetForm = new();
             addAssetForm.ShowDialog();
         }
 
         private void btnFindAssets_Click(object sender, EventArgs e)
         {
-            FindAssetForm retrieveAssetForm = new FindAssetForm();
+            FindAssetForm retrieveAssetForm = new();
             retrieveAssetForm.ShowDialog();
         }
 
         private void btnDeleteAsset_Click(object sender, EventArgs e)
         {
-            DeleteAssetForm deleteAssetForm = new DeleteAssetForm();
+            DeleteAssetForm deleteAssetForm = new();
             deleteAssetForm.ShowDialog();
         }
 
         private void btnUpdateAsset_Click(object sender, EventArgs e)
         {
-            UpdateAssetForm updateAssetForm = new UpdateAssetForm();
-            updateAssetForm.ShowDialog();
+            UpdateChooseAssetForm updateChooseAssetForm = new();
+            updateChooseAssetForm.ShowDialog();
         }
     }
 }

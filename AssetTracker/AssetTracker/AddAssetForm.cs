@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Configuration.Internal;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Classes;
+﻿using Classes;
 using MySql.Data.MySqlClient;
-using System.Management;
 
 namespace AssetTracker2
 {
@@ -45,17 +32,9 @@ namespace AssetTracker2
                     throw new Exception("Manufacturer is mandatory.");
 
                 HardwareAssetDB database = new();
+                HardwareAsset hardwareAsset = new(txtAssetName.Text, txtIPAddress.Text, PurchaseDate, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
                 database.Conn.Open();
-                if (database.ModelExists(txtModel.Text))
-                    if (dtpPurchaseDate.Enabled)
-                        database.AddAsset(txtAssetName.Text, txtIPAddress.Text, PurchaseDate, txtNote.Text, txtModel.Text);
-                    else
-                        database.AddAsset(txtAssetName.Text, txtIPAddress.Text, txtNote.Text, txtModel.Text);
-                else
-                    if (dtpPurchaseDate.Enabled)
-                    database.AddAsset(txtAssetName.Text, txtIPAddress.Text, PurchaseDate, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
-                else
-                    database.AddAsset(txtAssetName.Text, txtIPAddress.Text, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
+                database.AddAsset(hardwareAsset);
                 database.Conn.Close();
                 this.Close();
             }
@@ -88,7 +67,7 @@ namespace AssetTracker2
 
         private void AddAssetForm_Click(object sender, EventArgs e)
         {
-            this.ActiveControl = null;
+            ActiveControl = null;
         }
 
         private void cbPurchaseDate_CheckedChanged(object sender, EventArgs e)
@@ -109,25 +88,22 @@ namespace AssetTracker2
 
         private void btnLoadData_Click(object sender, EventArgs e)
         {
-            txtAssetName.Text = Environment.MachineName;
-            txtIPAddress.Text = Dns.GetHostAddresses(Dns.GetHostName())[1].ToString();
-            //txtIPAddress.Text = new HttpClient().GetStringAsync("http://icanhazip.com").Result; PUBLIC IP
+            HardwareAsset hardwareAsset = new();
+            hardwareAsset.RetrieveData();
 
-            // https://stackoverflow.com/questions/26253423/get-system-information-using-c-sharp
-            System.Management.SelectQuery query = new System.Management.SelectQuery("Select * from Win32_ComputerSystem");
+            txtAssetName.Text = hardwareAsset.Name;
+            txtIPAddress.Text = hardwareAsset.IpAddress;
+            txtManufacturer.Text = hardwareAsset.Manufacturer;
+            txtModel.Text = hardwareAsset.ModelName;
+            txtType.Text = hardwareAsset.Type;
 
-            using (System.Management.ManagementObjectSearcher searcher = new System.Management.ManagementObjectSearcher(query))
-            {
-                foreach (System.Management.ManagementObject process in searcher.Get())
-                {
-                    process.Get();
-                    txtManufacturer.Text = process["Manufacturer"].ToString();
-                    txtModel.Text = process["Model"].ToString();
-                    txtType.Text = process["SystemType"].ToString();
-                }
-            }
             txtModel.Focus();
-            this.ActiveControl = null;
+            ActiveControl = null;
+        }
+
+        private void dtpPurchaseDate_ValueChanged(object sender, EventArgs e)
+        {
+            PurchaseDate = dtpPurchaseDate.Value.ToString("yyyy-MM-dd");
         }
     }
 }

@@ -7,102 +7,141 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Classes
 {
-    public abstract class GeneralDB
+    public class GeneralDB
     {
         public MySqlConnection Conn;
 
-        protected GeneralDB()
+        public GeneralDB()
         {
             Conn = new MySqlConnection("Server=lochnagar.abertay.ac.uk; Database=sql2203326; Uid=sql2203326; Pwd=iVGGteQzELna;");
         }
 
-        //public static MySqlCommand CustomQuery(string condition)
-        //{
-        //    Connection connection = new Connection();
-        //    MySqlCommand command;
-        //    connection.Connect();
-        //    connection.Conn.Open();
-        //    command = new MySqlCommand(condition, connection.Conn);
-        //    command.ExecuteNonQuery();
-        //    connection.Conn.Close();
-        //    return command;
-        //}
-
-        //public static MySqlCommand CustomQuery(string condition, Connection connection)
-        //{
-        //    MySqlCommand command;
-        //    command = new MySqlCommand(condition, connection.Conn);
-        //    command.ExecuteNonQuery();
-        //    return command;
-        //}
-
-        protected void Insert(string tableName, List<string> columns, List<string> values)
+        public GeneralDB(string conn)
         {
-            string columnsString = String.Join(", ", columns);
-            string valuesString = "'" + String.Join("', '", values) + "'";
+            Conn = new MySqlConnection(conn);
+        }
+
+        public MySqlCommand CustomQuery(string query)
+        {
+            MySqlCommand command;
+            command = new MySqlCommand(query, Conn);
+            return command;
+        }
+
+        public int Insert(string tableName, List<string> columns, List<string> values)
+        {
+            string columnsString = ListToColumnsString(columns);
+            string valuesString = ListToValuesString(values);
             string sql = String.Format("INSERT INTO {0} ({1}) VALUES ({2})", tableName, columnsString, valuesString);
             MySqlCommand command;
             command = new MySqlCommand(sql, Conn);
-            command.ExecuteNonQuery();
+            return command.ExecuteNonQuery();
         }
 
-        //public static MySqlCommand SelectAll(string tableName)
-        //{
-        //    Connection connection = new Connection();
-        //    MySqlCommand command;
-        //    connection.Connect();
-        //    connection.Conn.Open();
-        //    command = new MySqlCommand("SELECT * FROM " + tableName, connection.Conn);
-        //    command.ExecuteNonQuery();
-        //    connection.Conn.Close();
-        //    return command;
-        //}
+        public int Insert(string tableName, Dictionary<string, string> columnValuePairs)
+        {
+            List<string> columns = new();
+            List<string> values = new();
+            string columnsString;
+            string valuesString;
 
-        //public static MySqlCommand Select(string tableName, string condition)
-        //{
-        //    Connection connection = new Connection();
-        //    MySqlCommand command;
-        //    connection.Connect();
-        //    connection.Conn.Open();
-        //    command = new MySqlCommand("SELECT * FROM " + tableName + " WHERE " + condition, connection.Conn);
-        //    command.ExecuteNonQuery();
-        //    connection.Conn.Close();
-        //    return command;
-        //}
+            foreach (KeyValuePair<string, string> pair in columnValuePairs)
+            {
+                columns.Add(pair.Key);
+                values.Add(pair.Value);
+            }
 
+            columnsString = ListToColumnsString(columns);
+            valuesString = ListToValuesString(values);
 
+            string sql = String.Format("INSERT INTO {0} ({1}) VALUES ({2})", tableName, columnsString, valuesString);
+            MySqlCommand command;
+            command = new MySqlCommand(sql, Conn);
+            return command.ExecuteNonQuery();
+        }
 
-        //public static void DeleteRowByPK(string tableName, string condition)
-        //{
-        //    Connection connection = new Connection();
-        //    MySqlCommand command;
-        //    connection.Connect();
-        //    connection.Conn.Open();
-        //    command = new MySqlCommand("DELETE FROM " + tableName + " WHERE " + condition, connection.Conn);
-        //    command.ExecuteNonQuery();
-        //    connection.Conn.Close();
-        //}
+        public MySqlCommand Select(string columns, string tableName, string condition = "1=1")
+        {
+            string sql = String.Format("SELECT {0} FROM {1} WHERE {2}", columns, tableName, condition);
+            MySqlCommand command;
+            command = new MySqlCommand(sql, Conn);
+            return command;
+        }
 
-        //public static void UpdateRowByPK(string tableName, string values, string condition)
-        //{
-        //    Connection connection = new Connection();
-        //    MySqlCommand command;
-        //    connection.Connect();
-        //    connection.Conn.Open();
-        //    command = new MySqlCommand("UPDATE " + tableName + " SET " + values + " WHERE " + condition, connection.Conn);
-        //    command.ExecuteNonQuery();
-        //    connection.Conn.Close();
-        //}
+        public MySqlCommand Select(List<string> columns, string tableName, string condition = "1=1")
+        {
+            string columnsString = ListToColumnsString(columns);
+            string sql = String.Format("SELECT {0} FROM {1} WHERE {2}", columnsString, tableName, condition);
+            MySqlCommand command;
+            command = new MySqlCommand(sql, Conn);
+            return command;
+        }
 
-        //public static bool KeyExists(string table, string keyName, string keyValue)
-        //{
-        //    MySqlDataAdapter adapter = new MySqlDataAdapter(GeneralDB.Select(table, keyName + " = '" + keyValue + "'"));
-        //    DataTable dt = new DataTable();
-        //    adapter.Fill(dt);
-        //    return dt.Rows.Count > 0;
-        //}
+        public int Delete(string tableName, string condition)
+        {
+            string sql = String.Format("DELETE FROM {0} WHERE {1}", tableName, condition);
+            MySqlCommand command;
+            command = new MySqlCommand(sql, Conn);
+            return command.ExecuteNonQuery();
+        }
+
+        public int Update(string tableName, string values, string condition)
+        {
+            string sql = String.Format("UPDATE {0} SET {1} WHERE {2}", tableName, values, condition);
+            MySqlCommand command;
+            command = new MySqlCommand(sql, Conn);
+            return command.ExecuteNonQuery();
+        }
+
+        public int Update(string tableName, Dictionary<string, string> values, string condition)
+        {
+            string valuesString = DictionaryToSetValuesString(values);
+            string sql = String.Format("UPDATE {0} SET {1} WHERE {2}", tableName, valuesString, condition);
+            MySqlCommand command;
+            command = new MySqlCommand(sql, Conn);
+            return command.ExecuteNonQuery();
+        }
+
+        public bool RowExists(string table, string keyName, string keyValue)
+        {
+
+            string condition = String.Format("{0} = '{1}'", keyName, keyValue);
+
+            MySqlCommand command = Select(keyName, table, condition);
+
+            using MySqlDataReader dataReader = command.ExecuteReader();
+            if (dataReader.HasRows)
+                while (dataReader.Read())
+                    if (keyValue == dataReader.GetString(0))
+                        return true;
+            return false;
+        }
+
+        protected static string ListToColumnsString(List<string> columns)
+        {
+            return String.Join(", ", columns);
+        }
+
+        protected static string ListToValuesString(List<string> values)
+        {
+            return "'" + String.Join("', '", values) + "'";
+        }
+
+        protected static string DictionaryToSetValuesString(Dictionary<string, string> values)
+        {
+            string SetValuesString;
+            List<string> valueStrings = new();
+            
+            foreach (KeyValuePair<string, string> pair in values)
+                valueStrings.Add(String.Format("{0} = '{1}'", pair.Key, pair.Value));
+
+            SetValuesString = String.Join(", ", valueStrings);
+
+            return SetValuesString;
+        }
     }
 }

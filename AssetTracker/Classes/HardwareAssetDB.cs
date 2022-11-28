@@ -3,140 +3,168 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 
 namespace Classes
 {
     public class HardwareAssetDB : GeneralDB
     {
-        //public HardwareAssetDB()
+        //public HardwareAssetDB(string conn)
         //{
-        //    Conn = new MySqlConnection("Server=lochnagar.abertay.ac.uk; Database=sql2203326; Uid=sql2203326; Pwd=iVGGteQzELna;");
+        //    GeneralDB(conn);
         //}
+
+        private const string selectAllFromAsset = @"
+                SELECT SGASSET.id 'ID', SGASSET.name 'Name', SGASSET.ipaddress 'IP Address', SGASSET.purchasedate 'Purchase Date', SGASSET.note 'Note', SGASSET.modelname 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
+                FROM SGASSET
+                INNER JOIN SGMODEL ON SGASSET.modelname = SGMODEL.modelname
+            ";
 
         public void AddAsset(HardwareAsset hardwareAsset)
         {
-            
-            MySqlCommand cmd = new MySqlCommand(sql, Conn);
-            cmd.ExecuteNonQuery();
+            Dictionary<string, string> properties = OBJProperties.GetProperties(hardwareAsset);
+            List<string> columns = new();
+            List<string> values = new();
+
+            foreach (KeyValuePair<string, string> property in properties)
+            {
+                if (property.Key != "type" || property.Key != "manufacturer")
+                {
+                    columns.Add(property.Key);
+                    values.Add(property.Value);
+                }
+            }
+
+            AddModel(hardwareAsset);
+            Insert("SGASSET", columns, values);        
         }
 
-        private void AddModel(string name, string type, string manufacturer)
+        private void AddModel(HardwareAsset hardwareAsset)
         {
-            string sql = @"INSERT INTO SGMODEL (name, type, manufacturer)
-                           VALUES " + String.Format("('{0}', '{1}', '{2}')", name, type, manufacturer);
+            Dictionary<string, string> properties = OBJProperties.GetProperties(hardwareAsset);
+            List<string> columns = new();
+            List<string> values = new();
 
-            MySqlCommand cmd = new MySqlCommand(sql, Conn);
-            cmd.ExecuteNonQuery();
+            foreach (KeyValuePair<string, string> property in properties)
+            {
+                if (property.Key == "modelname" || property.Key == "type" || property.Key == "manufacturer")
+                {
+                    columns.Add(property.Key);
+                    values.Add(property.Value);
+                }
+            }
+
+            if (!ModelExists(properties["modelname"]))
+                Insert("SGMODEL", columns, values);
         }
 
         public MySqlCommand SelectAllAssets()
         {
-            string sql = @"
-                SELECT SGASSET.id 'ID', SGASSET.name 'Name', SGASSET.ipaddress 'IP Address', SGASSET.purchasedate 'Purchase Date', SGASSET.note 'Note', SGASSET.model 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
-                FROM SGASSET
-                INNER JOIN SGMODEL ON SGASSET.model = SGMODEL.name;
-            ";
-
-            MySqlCommand cmd = new MySqlCommand(sql, Conn);
-            cmd.ExecuteNonQuery();
-            return cmd;
+            return CustomQuery(selectAllFromAsset);
         }
 
         public MySqlCommand SelectAssetById(int id)
         {
-            string sql = @"
-                SELECT SGASSET.id 'ID', SGASSET.name 'Name', SGASSET.ipaddress 'IP Address', SGASSET.purchasedate 'Purchase Date', SGASSET.note 'Note', SGMODEL.name 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
-                FROM SGASSET
-                JOIN SGMODEL
-                ON SGASSET.model = SGMODEL.name
-                WHERE SGASSET.id = " + id;
-            MySqlCommand cmd;
-            cmd = new MySqlCommand(sql, Conn);
-            cmd.ExecuteNonQuery();
-            return cmd;
+            string sql = String.Format("{0} WHERE SGASSET.id = '{1}'", selectAllFromAsset, id);
+
+            return CustomQuery(sql);
         }
 
         public MySqlCommand SelectAssetByIp(string ip)
         {
-            string sql = String.Format(@"
-                SELECT SGASSET.id 'ID', SGASSET.name 'Name', SGASSET.ipaddress 'IP Address', SGASSET.purchasedate 'Purchase Date', SGASSET.note 'Note', SGMODEL.name 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
-                FROM SGASSET
-                JOIN SGMODEL
-                ON SGASSET.model = SGMODEL.name
-                WHERE SGASSET.ipaddress = '{0}'", ip);
-            MySqlCommand cmd;
-            cmd = new MySqlCommand(sql, Conn);
-            cmd.ExecuteNonQuery();
-            return cmd;
+            string sql = String.Format("{0} WHERE SGASSET.ipaddress = '{1}'", selectAllFromAsset, ip);
+
+            return CustomQuery(sql);
         }
 
         public MySqlCommand SelectModelByName(string name)
         {
-            string sql = @"
-                SELECT *
-                FROM SGMODEL
-                WHERE name = '" + name + @"';
-            ";
+            string condition = String.Format("modelname = '{0}'", name);
 
-            MySqlCommand cmd = new MySqlCommand(sql, Conn);
-            cmd.ExecuteNonQuery();
-            return cmd;
+            return Select("*", "SGMODEL", condition);
         }
 
-
-
-        public void AddAsset(string name, string ipaddress, string note, string model)
+        public int UpdateAssetById(HardwareAsset hardwareAsset)
         {
-            string sql = @"INSERT INTO SGASSET (name, ipaddress, note, model)
-                           VALUES " + String.Format("('{0}', '{1}', '{2}', '{3}')", name, ipaddress, note, model);
+            Dictionary<string, string> fields = new();
 
-            MySqlCommand cmd = new MySqlCommand(sql, Conn);
-            cmd.ExecuteNonQuery();
+            foreach (KeyValuePair<string, string> property in OBJProperties.GetProperties(hardwareAsset))
+            {
+                if (property.Key != "type" && property.Key != "manufacturer")
+                    fields.Add(property.Key, property.Value);
+            }
+
+            string setValues = DictionaryToSetValuesString(fields);
+            string condition = String.Format("id = '{0}'", hardwareAsset.Id);
+            UpdateModel(hardwareAsset);
+            return Update("SGASSET", setValues, condition);
         }
 
-        public void AddAsset(string name, string ipaddress, string purchasedate, string note, string model, string type, string manufacturer)
+        public int UpdateAssetByIp(HardwareAsset hardwareAsset)
         {
-            AddModel(model, type, manufacturer);
-            AddAsset(name, ipaddress, purchasedate, note, model);
+            Dictionary<string, string> fields = new();
+
+            foreach (KeyValuePair<string, string> property in OBJProperties.GetProperties(hardwareAsset))
+            {
+                if (property.Key != "type" && property.Key != "manufacturer")
+                    fields.Add(property.Key, property.Value);
+            }
+
+            string setValues = DictionaryToSetValuesString(fields);
+            string condition = String.Format("ipaddress = '{0}'", hardwareAsset.IpAddress);
+            UpdateModel(hardwareAsset);
+            return Update("SGASSET", setValues, condition);
         }
 
-        public void AddAsset(string name, string ipaddress, string note, string model, string type, string manufacturer)
+        public void UpdateModel(HardwareAsset hardwareAsset)
         {
-            AddModel(model, type, manufacturer);
-            AddAsset(name, ipaddress, note, model);
-        }
+            Dictionary<string, string> hardwareAssetFields = OBJProperties.GetProperties(hardwareAsset);
+            Dictionary<string, string> modelFields = new();
 
-        public void AddModel(string name, string type, string manufacturer)
-        {
-            string sql = @"INSERT INTO SGMODEL (name, type, manufacturer)
-                           VALUES " + String.Format("('{0}', '{1}', '{2}')", name, type, manufacturer);
+            foreach (KeyValuePair<string, string> field in hardwareAssetFields)
+            {
+                if (field.Key == "modelname" || field.Key == "type" || field.Key == "manufacturer")
+                    modelFields.Add(field.Key, field.Value);
+            }
 
-            MySqlCommand cmd = new MySqlCommand(sql, Conn);
-            cmd.ExecuteNonQuery();
+
+            string condition = String.Format("modelname = '{0}'", hardwareAsset.ModelName);
+            if (ModelExists(hardwareAsset.ModelName))
+                Update("SGMODEL", modelFields, condition);
+            else
+                Insert("SGMODEL", modelFields);
         }
 
         public int DeleteAssetById(int id)
         {
-            string sql = "DELETE FROM SGASSET WHERE id = " + id;
-            MySqlCommand cmd = new MySqlCommand(sql, Conn);
-            return cmd.ExecuteNonQuery();
+            string condition = String.Format("id = '{0}'", id);
+
+            return Delete("SGASSET", condition);
         }
 
         public int DeleteAssetByIp(string ip)
         {
-            string sql = String.Format("DELETE FROM SGASSET WHERE ipaddress = '{0}'",  ip);
-            MySqlCommand cmd = new MySqlCommand(sql, Conn);
-            return cmd.ExecuteNonQuery();
+            string condition = String.Format("ipaddress = '{0}'", ip);
+
+            return Delete("SGASSET", condition);
         }
 
         public bool ModelExists(string name)
         {
-            MySqlCommand cmd = this.SelectModelByName(name);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            bool exists = reader.Read();
-            reader.Close();
-            return exists;
+            return RowExists("SGMODEL", "modelname", name);
+        }
+
+        public bool AssetExistsById(int id)
+        {
+            return RowExists("SGASSET", "id", id.ToString());
+        }
+
+        public bool AssetExistsByIp(string ip)
+        {
+            return RowExists("SGASSET", "ipaddress", ip);
         }
     }
 }

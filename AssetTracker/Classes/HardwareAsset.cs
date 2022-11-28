@@ -12,32 +12,44 @@ namespace Classes
 {
     public class HardwareAsset : Asset
     {
-        public override string Name { get; set; }
         public string IpAddress { get; set; }
         public string PurchaseDate { get; set; }
         public string Note { get; set; }
-        public string Model { get; set; }
+        public string ModelName { get; set; }
         public string Type { get; set; }
-        public override string Manufacturer { get; set; }
 
         public HardwareAsset()
         {
+            Id = -1;
             Name = "";
             IpAddress = "";
             PurchaseDate = "";
             Note = "";
-            Model = "";
+            ModelName = "";
             Type = "";
             Manufacturer = "";
         }
 
-        public HardwareAsset(string name, string ipaddress, string purchasedate, string note, string model, string type, string manufacturer)
+        public HardwareAsset(int id, string name, string ipaddress, string purchasedate, string note, string model, string type, string manufacturer)
         {
+            Id = id;
             Name = name;
             IpAddress = ipaddress;
             PurchaseDate = purchasedate;
             Note = note;
-            Model = model;
+            ModelName = model;
+            Type = type;
+            Manufacturer = manufacturer;
+        }
+
+        public HardwareAsset(string name, string ipaddress, string purchasedate, string note, string model, string type, string manufacturer)
+        {
+            Id = -1;
+            Name = name;
+            IpAddress = ipaddress;
+            PurchaseDate = purchasedate;
+            Note = note;
+            ModelName = model;
             Type = type;
             Manufacturer = manufacturer;
         }
@@ -53,13 +65,13 @@ namespace Classes
                     try
                     {
                         Manufacturer = process["Manufacturer"].ToString();
-                        Model = process["Model"].ToString();
+                        ModelName = process["Model"].ToString();
                         Type = process["SystemType"].ToString();
                     }
                     catch (NullReferenceException ex)
                     {
                         Manufacturer = "";
-                        Model = "";
+                        ModelName = "";
                         Type = "";
                         MessageBox.Show(ex.Message);
                     }

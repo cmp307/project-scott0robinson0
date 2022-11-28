@@ -171,6 +171,7 @@
             this.dtpPurchaseDate.Name = "dtpPurchaseDate";
             this.dtpPurchaseDate.Size = new System.Drawing.Size(191, 23);
             this.dtpPurchaseDate.TabIndex = 14;
+            this.dtpPurchaseDate.ValueChanged += new System.EventHandler(this.dtpPurchaseDate_ValueChanged);
             // 
             // txtModel
             // 

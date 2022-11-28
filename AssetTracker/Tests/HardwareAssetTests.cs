@@ -18,7 +18,7 @@ namespace Tests
 
             Assert.AreEqual("testname", hardwareAsset.Name);
             Assert.AreEqual("testip", hardwareAsset.IpAddress);
-            Assert.AreEqual("testmodel", hardwareAsset.Model);
+            Assert.AreEqual("testmodel", hardwareAsset.ModelName);
             Assert.AreEqual("testtype", hardwareAsset.Type);
             Assert.AreEqual("testmanufacturer", hardwareAsset.Manufacturer);
             Assert.AreEqual("testpurchasedate", hardwareAsset.PurchaseDate);
@@ -34,7 +34,7 @@ namespace Tests
 
             Assert.IsNotNull(hardwareAsset.Name);
             Assert.IsNotNull(hardwareAsset.IpAddress);
-            Assert.IsNotNull(hardwareAsset.Model);
+            Assert.IsNotNull(hardwareAsset.ModelName);
             Assert.IsNotNull(hardwareAsset.Type);
             Assert.IsNotNull(hardwareAsset.Manufacturer);
         }
