@@ -12,11 +12,6 @@ namespace Classes
 {
     public class HardwareAssetDB : GeneralDB
     {
-        //public HardwareAssetDB(string conn)
-        //{
-        //    GeneralDB(conn);
-        //}
-
         private const string selectAllFromAsset = @"
                 SELECT SGASSET.id 'ID', SGASSET.name 'Name', SGASSET.ipaddress 'IP Address', SGASSET.purchasedate 'Purchase Date', SGASSET.note 'Note', SGASSET.modelname 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
                 FROM SGASSET
