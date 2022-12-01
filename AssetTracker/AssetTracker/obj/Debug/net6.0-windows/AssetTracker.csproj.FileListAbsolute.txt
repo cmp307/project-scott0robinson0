@@ -96,3 +96,4 @@ C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-w
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.genruntimeconfig.cache
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\ref\AssetTracker.dll
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.UpdateChooseAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.LoginForm.resources

@@ -13,9 +13,9 @@ namespace Classes
     public class HardwareAssetDB : GeneralDB
     {
         private const string selectAllFromAsset = @"
-                SELECT SGASSET.id 'ID', SGASSET.name 'Name', SGASSET.ipaddress 'IP Address', SGASSET.purchasedate 'Purchase Date', SGASSET.note 'Note', SGASSET.modelname 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
-                FROM SGASSET
-                INNER JOIN SGMODEL ON SGASSET.modelname = SGMODEL.modelname
+                SELECT SGHARDWAREASSET.id 'ID', SGHARDWAREASSET.name 'Name', SGHARDWAREASSET.ipaddress 'IP Address', SGHARDWAREASSET.purchasedate 'Purchase Date', SGHARDWAREASSET.note 'Note', SGHARDWAREASSET.modelname 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
+                FROM SGHARDWAREASSET
+                INNER JOIN SGMODEL ON SGHARDWAREASSET.modelname = SGMODEL.modelname
             ";
 
         public void AddAsset(HardwareAsset hardwareAsset)
@@ -34,7 +34,7 @@ namespace Classes
             }
 
             AddModel(hardwareAsset);
-            Insert("SGASSET", columns, values);        
+            Insert("SGHARDWAREASSET", columns, values);        
         }
 
         private void AddModel(HardwareAsset hardwareAsset)
@@ -63,14 +63,14 @@ namespace Classes
 
         public MySqlCommand SelectAssetById(int id)
         {
-            string sql = String.Format("{0} WHERE SGASSET.id = '{1}'", selectAllFromAsset, id);
+            string sql = String.Format("{0} WHERE SGHARDWAREASSET.id = '{1}'", selectAllFromAsset, id);
 
             return CustomQuery(sql);
         }
 
         public MySqlCommand SelectAssetByIp(string ip)
         {
-            string sql = String.Format("{0} WHERE SGASSET.ipaddress = '{1}'", selectAllFromAsset, ip);
+            string sql = String.Format("{0} WHERE SGHARDWAREASSET.ipaddress = '{1}'", selectAllFromAsset, ip);
 
             return CustomQuery(sql);
         }
@@ -95,7 +95,7 @@ namespace Classes
             string setValues = DictionaryToSetValuesString(fields);
             string condition = String.Format("id = '{0}'", hardwareAsset.Id);
             UpdateModel(hardwareAsset);
-            return Update("SGASSET", setValues, condition);
+            return Update("SGHARDWAREASSET", setValues, condition);
         }
 
         public int UpdateAssetByIp(HardwareAsset hardwareAsset)
@@ -111,7 +111,7 @@ namespace Classes
             string setValues = DictionaryToSetValuesString(fields);
             string condition = String.Format("ipaddress = '{0}'", hardwareAsset.IpAddress);
             UpdateModel(hardwareAsset);
-            return Update("SGASSET", setValues, condition);
+            return Update("SGHARDWAREASSET", setValues, condition);
         }
 
         public void UpdateModel(HardwareAsset hardwareAsset)
@@ -137,14 +137,14 @@ namespace Classes
         {
             string condition = String.Format("id = '{0}'", id);
 
-            return Delete("SGASSET", condition);
+            return Delete("SGHARDWAREASSET", condition);
         }
 
         public int DeleteAssetByIp(string ip)
         {
             string condition = String.Format("ipaddress = '{0}'", ip);
 
-            return Delete("SGASSET", condition);
+            return Delete("SGHARDWAREASSET", condition);
         }
 
         public bool ModelExists(string name)
@@ -154,12 +154,12 @@ namespace Classes
 
         public bool AssetExistsById(int id)
         {
-            return RowExists("SGASSET", "id", id.ToString());
+            return RowExists("SGHARDWAREASSET", "id", id.ToString());
         }
 
         public bool AssetExistsByIp(string ip)
         {
-            return RowExists("SGASSET", "ipaddress", ip);
+            return RowExists("SGHARDWAREASSET", "ipaddress", ip);
         }
     }
 }
