@@ -84,6 +84,7 @@ C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-w
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.FindAssetForm.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker2.HomeForm.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.UpdateAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.UpdateChooseAssetForm.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.csproj.GenerateResource.cache
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.AssemblyInfoInputs.cache
@@ -95,4 +96,3 @@ C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-w
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.pdb
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.genruntimeconfig.cache
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\ref\AssetTracker.dll
-C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.UpdateChooseAssetForm.resources
