@@ -1,4 +1,4 @@
-﻿namespace AssetTracker
+﻿namespace AssetTracker2
 {
     partial class HomeForm
     {
@@ -28,64 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLoad = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAddAsset = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnFindAssets = new System.Windows.Forms.Button();
+            this.btnDeleteAsset = new System.Windows.Forms.Button();
+            this.btnUpdateAsset = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.Location = new System.Drawing.Point(861, 12);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnLoad.TabIndex = 0;
-            this.btnLoad.Text = "Reload";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(843, 426);
-            this.dataGridView1.TabIndex = 1;
             // 
             // btnAddAsset
             // 
-            this.btnAddAsset.Location = new System.Drawing.Point(861, 41);
+            this.btnAddAsset.Location = new System.Drawing.Point(67, 53);
             this.btnAddAsset.Name = "btnAddAsset";
-            this.btnAddAsset.Size = new System.Drawing.Size(75, 23);
+            this.btnAddAsset.Size = new System.Drawing.Size(91, 30);
             this.btnAddAsset.TabIndex = 2;
             this.btnAddAsset.Text = "Add Asset";
             this.btnAddAsset.UseVisualStyleBackColor = true;
             this.btnAddAsset.Click += new System.EventHandler(this.btnAddAsset_Click);
             // 
+            // btnFindAssets
+            // 
+            this.btnFindAssets.Location = new System.Drawing.Point(67, 89);
+            this.btnFindAssets.Name = "btnFindAssets";
+            this.btnFindAssets.Size = new System.Drawing.Size(91, 30);
+            this.btnFindAssets.TabIndex = 3;
+            this.btnFindAssets.Text = "Find Asset(s)";
+            this.btnFindAssets.UseVisualStyleBackColor = true;
+            this.btnFindAssets.Click += new System.EventHandler(this.btnFindAssets_Click);
+            // 
+            // btnDeleteAsset
+            // 
+            this.btnDeleteAsset.Location = new System.Drawing.Point(67, 161);
+            this.btnDeleteAsset.Name = "btnDeleteAsset";
+            this.btnDeleteAsset.Size = new System.Drawing.Size(91, 30);
+            this.btnDeleteAsset.TabIndex = 4;
+            this.btnDeleteAsset.Text = "Delete Asset";
+            this.btnDeleteAsset.UseVisualStyleBackColor = true;
+            this.btnDeleteAsset.Click += new System.EventHandler(this.btnDeleteAsset_Click);
+            // 
+            // btnUpdateAsset
+            // 
+            this.btnUpdateAsset.Location = new System.Drawing.Point(67, 125);
+            this.btnUpdateAsset.Name = "btnUpdateAsset";
+            this.btnUpdateAsset.Size = new System.Drawing.Size(91, 30);
+            this.btnUpdateAsset.TabIndex = 5;
+            this.btnUpdateAsset.Text = "Update Asset";
+            this.btnUpdateAsset.UseVisualStyleBackColor = true;
+            this.btnUpdateAsset.Click += new System.EventHandler(this.btnUpdateAsset_Click);
+            // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 450);
+            this.ClientSize = new System.Drawing.Size(227, 263);
+            this.Controls.Add(this.btnUpdateAsset);
+            this.Controls.Add(this.btnDeleteAsset);
+            this.Controls.Add(this.btnFindAssets);
             this.Controls.Add(this.btnAddAsset);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnLoad);
             this.Name = "HomeForm";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Home";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnLoad;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnAddAsset;
+        private Button btnAddAsset;
+        private Button btnFindAssets;
+        private Button btnDeleteAsset;
+        private Button btnUpdateAsset;
     }
 }
-

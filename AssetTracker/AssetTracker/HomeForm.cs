@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,52 +8,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using Classes;
+using AssetTracker;
 
-namespace AssetTracker
+namespace AssetTracker2
 {
     public partial class HomeForm : Form
     {
-        DataTable dataTable;
-        MySqlDataAdapter adapter;
         public HomeForm()
         {
             InitializeComponent();
-            this.LoadData();
-        }
-
-        private void LoadData()
-        {
-            try
-            {
-                dataTable = new DataTable();
-
-                Database database = new Database();
-                database.Connect();
-                database.Conn.Open();
-                adapter = new MySqlDataAdapter(database.SelectAllAssets());
-                database.Conn.Close();
-
-                adapter.Fill(dataTable);
-                dataGridView1.DataSource = dataTable.DefaultView;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            this.LoadData();
         }
 
         private void btnAddAsset_Click(object sender, EventArgs e)
         {
-            AddAssetForm addAssetForm = new AddAssetForm();
+            AddAssetForm addAssetForm = new();
             addAssetForm.ShowDialog();
-            this.LoadData();
+        }
+
+        private void btnFindAssets_Click(object sender, EventArgs e)
+        {
+            FindAssetForm retrieveAssetForm = new();
+            retrieveAssetForm.ShowDialog();
+        }
+
+        private void btnDeleteAsset_Click(object sender, EventArgs e)
+        {
+            DeleteAssetForm deleteAssetForm = new();
+            deleteAssetForm.ShowDialog();
+        }
+
+        private void btnUpdateAsset_Click(object sender, EventArgs e)
+        {
+            UpdateChooseAssetForm updateChooseAssetForm = new();
+            updateChooseAssetForm.ShowDialog();
         }
     }
 }

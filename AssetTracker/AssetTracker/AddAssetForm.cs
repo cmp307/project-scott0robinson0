@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Classes;
+﻿using Classes;
 using MySql.Data.MySqlClient;
 
-namespace AssetTracker
+namespace AssetTracker2
 {
     public partial class AddAssetForm : Form
     {
@@ -20,7 +10,7 @@ namespace AssetTracker
         {
             InitializeComponent();
             PurchaseDate = "";
-        } 
+        }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -41,19 +31,10 @@ namespace AssetTracker
                 if (txtManufacturer.Text == "")
                     throw new Exception("Manufacturer is mandatory.");
 
-                Database database = new Database();
-                database.Connect();
+                HardwareAssetDB database = new();
+                HardwareAsset hardwareAsset = new(txtAssetName.Text, txtIPAddress.Text, PurchaseDate, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
                 database.Conn.Open();
-                if (database.ModelExists(txtModel.Text))
-                    if (dtpPurchaseDate.Enabled)
-                        database.AddAsset(txtAssetName.Text, txtIPAddress.Text, PurchaseDate, txtNote.Text, txtModel.Text);
-                    else
-                        database.AddAsset(txtAssetName.Text, txtIPAddress.Text, txtNote.Text, txtModel.Text);
-                else
-                    if (dtpPurchaseDate.Enabled)
-                        database.AddAsset(txtAssetName.Text, txtIPAddress.Text, PurchaseDate, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
-                    else
-                        database.AddAsset(txtAssetName.Text, txtIPAddress.Text, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);
+                database.AddAsset(hardwareAsset);
                 database.Conn.Close();
                 this.Close();
             }
@@ -65,8 +46,7 @@ namespace AssetTracker
 
         private void txtModel_Leave(object sender, EventArgs e)
         {
-            Database database = new Database();
-            database.Connect();
+            HardwareAssetDB database = new();
             database.Conn.Open();
             MySqlCommand command = database.SelectModelByName(txtModel.Text);
             MySqlDataReader reader = command.ExecuteReader();
@@ -87,7 +67,7 @@ namespace AssetTracker
 
         private void AddAssetForm_Click(object sender, EventArgs e)
         {
-            this.ActiveControl = null;
+            ActiveControl = null;
         }
 
         private void cbPurchaseDate_CheckedChanged(object sender, EventArgs e)
@@ -104,6 +84,26 @@ namespace AssetTracker
                 dtpPurchaseDate.Enabled = false;
                 PurchaseDate = "";
             }
+        }
+
+        private void btnLoadData_Click(object sender, EventArgs e)
+        {
+            HardwareAsset hardwareAsset = new();
+            hardwareAsset.RetrieveData();
+
+            txtAssetName.Text = hardwareAsset.Name;
+            txtIPAddress.Text = hardwareAsset.IpAddress;
+            txtManufacturer.Text = hardwareAsset.Manufacturer;
+            txtModel.Text = hardwareAsset.ModelName;
+            txtType.Text = hardwareAsset.Type;
+
+            txtModel.Focus();
+            ActiveControl = null;
+        }
+
+        private void dtpPurchaseDate_ValueChanged(object sender, EventArgs e)
+        {
+            PurchaseDate = dtpPurchaseDate.Value.ToString("yyyy-MM-dd");
         }
     }
 }
