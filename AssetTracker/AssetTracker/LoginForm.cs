@@ -16,6 +16,9 @@ namespace AssetTracker
         public LoginForm()
         {
             InitializeComponent();
+            txtUsername.Text = "admin";
+            txtPassword.Text = "1234";
+            btnLogin.PerformClick();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

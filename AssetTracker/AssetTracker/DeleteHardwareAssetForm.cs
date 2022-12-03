@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace AssetTracker
 {
-    public partial class DeleteAssetForm : Form
+    public partial class DeleteHardwareAssetForm : Form
     {
         private HardwareAssetDB database;
         private string idtext;
         private string iptext;
 
-        public DeleteAssetForm()
+        public DeleteHardwareAssetForm()
         {
             InitializeComponent();
             database = new HardwareAssetDB();

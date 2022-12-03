@@ -1,6 +1,6 @@
 ﻿namespace AssetTracker
 {
-    partial class DeleteAssetForm
+    partial class DeleteHardwareAssetForm
     {
         /// <summary>
         /// Required designer variable.
@@ -79,7 +79,7 @@
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // DeleteAssetForm
+            // DeleteHardwareAssetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -89,8 +89,8 @@
             this.Controls.Add(this.txtAssetID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIPAddress);
-            this.Name = "DeleteAssetForm";
-            this.Text = "Delete Asset";
+            this.Name = "DeleteHardwareAssetForm";
+            this.Text = "Delete Hardware Asset";
             this.ResumeLayout(false);
             this.PerformLayout();
 

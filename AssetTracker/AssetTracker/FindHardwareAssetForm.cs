@@ -12,7 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace AssetTracker
 {
-    public partial class FindAssetForm : Form
+    public partial class FindHardwareAssetForm : Form
     {
         private DataTable dataTable;
         private MySqlDataAdapter adapter;
@@ -20,7 +20,7 @@ namespace AssetTracker
         private string idtext;
         private string iptext;
 
-        public FindAssetForm()
+        public FindHardwareAssetForm()
         {
             InitializeComponent();
             dataTable = new DataTable();

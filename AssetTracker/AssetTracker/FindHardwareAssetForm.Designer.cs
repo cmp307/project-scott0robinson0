@@ -1,6 +1,6 @@
 ﻿namespace AssetTracker
 {
-    partial class FindAssetForm
+    partial class FindHardwareAssetForm
     {
         /// <summary>
         /// Required designer variable.
@@ -103,7 +103,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1135, 426);
             this.dataGridView1.TabIndex = 7;
             // 
-            // RetrieveAssetForm
+            // FindHardwareAssetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,8 +115,8 @@
             this.Controls.Add(this.cbAllAssets);
             this.Controls.Add(this.txtIPAddress);
             this.Controls.Add(this.btnLoad);
-            this.Name = "RetrieveAssetForm";
-            this.Text = "Find Asset";
+            this.Name = "FindHardwareAssetForm";
+            this.Text = "Find Hardware Asset";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

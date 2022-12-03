@@ -13,17 +13,17 @@ using System.Windows.Forms;
 
 namespace AssetTracker
 {
-    public partial class UpdateAssetForm : Form
+    public partial class UpdateHardwareAssetForm : Form
     {
         private string PurchaseDate;
         private string ip;
         private string id;
-        public UpdateAssetForm()
+        public UpdateHardwareAssetForm()
         {
             InitializeComponent();
             PurchaseDate = "";
-            ip = UpdateChooseAssetForm.IpText;
-            id = UpdateChooseAssetForm.IdText;
+            ip = UpdateHardwareChooseAssetForm.IpText;
+            id = UpdateHardwareChooseAssetForm.IdText;
 
             HardwareAssetDB database = new();
             MySqlCommand command;

@@ -1,6 +1,6 @@
 ﻿namespace AssetTracker
 {
-    partial class UpdateChooseAssetForm
+    partial class UpdateHardwareChooseAssetForm
     {
         /// <summary>
         /// Required designer variable.
@@ -79,7 +79,7 @@
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // UpdateChooseAssetForm
+            // UpdateHardwareChooseAssetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -89,8 +89,8 @@
             this.Controls.Add(this.txtAssetID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "UpdateChooseAssetForm";
-            this.Text = "Choose Asset";
+            this.Name = "UpdateHardwareChooseAssetForm";
+            this.Text = "Choose Hardware Asset";
             this.ResumeLayout(false);
             this.PerformLayout();
 

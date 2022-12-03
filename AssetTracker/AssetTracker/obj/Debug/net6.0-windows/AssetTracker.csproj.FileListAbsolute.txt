@@ -79,11 +79,7 @@ C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-w
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-windows\Classes.dll
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-windows\Classes.pdb
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.csproj.AssemblyReference.cache
-C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker2.AddAssetForm.resources
-C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.DeleteAssetForm.resources
-C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.FindAssetForm.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker2.HomeForm.resources
-C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.UpdateAssetForm.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.csproj.GenerateResource.cache
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.AssemblyInfoInputs.cache
@@ -95,5 +91,14 @@ C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-w
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.pdb
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.genruntimeconfig.cache
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\ref\AssetTracker.dll
-C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.UpdateChooseAssetForm.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.LoginForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker2.AddHardwareAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.DeleteHardwareAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.FindHardwareAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.UpdateHardwareAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.UpdateHardwareChooseAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.Properties.Resources.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.AddSoftwareAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-windows\System.Net.Http.Formatting.dll
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\bin\Debug\net6.0-windows\Newtonsoft.Json.Bson.dll

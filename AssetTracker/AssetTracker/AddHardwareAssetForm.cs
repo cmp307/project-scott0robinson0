@@ -3,10 +3,10 @@ using MySql.Data.MySqlClient;
 
 namespace AssetTracker2
 {
-    public partial class AddAssetForm : Form
+    public partial class AddHardwareAssetForm : Form
     {
         private string PurchaseDate;
-        public AddAssetForm()
+        public AddHardwareAssetForm()
         {
             InitializeComponent();
             PurchaseDate = "";

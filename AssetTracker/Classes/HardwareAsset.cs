@@ -12,6 +12,7 @@ namespace Classes
 {
     public class HardwareAsset : Asset
     {
+        public int Id { get; set; }
         public string IpAddress { get; set; }
         public string PurchaseDate { get; set; }
         public string Note { get; set; }

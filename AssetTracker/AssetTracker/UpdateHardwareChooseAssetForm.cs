@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace AssetTracker
 {
-    public partial class UpdateChooseAssetForm : Form
+    public partial class UpdateHardwareChooseAssetForm : Form
     {
         private HardwareAssetDB database;
         private static string ipText = "";
@@ -19,7 +19,7 @@ namespace AssetTracker
 
         public static string IdText { get => idText; set => idText = value; }
         public static string IpText { get => ipText; set => ipText = value; }
-        public UpdateChooseAssetForm()
+        public UpdateHardwareChooseAssetForm()
         {
             InitializeComponent();
             database = new HardwareAssetDB();
@@ -63,7 +63,7 @@ namespace AssetTracker
         {
             try
             {
-                UpdateAssetForm updateAssetForm = new();
+                UpdateHardwareAssetForm updateAssetForm = new();
                 if (IdText != "")
                 {
                     database.Conn.Open();

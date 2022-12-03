@@ -1,6 +1,6 @@
 ﻿namespace AssetTracker2
 {
-    partial class AddAssetForm
+    partial class AddHardwareAssetForm
     {
         /// <summary>
         /// Required designer variable.
@@ -250,7 +250,7 @@
             this.btnLoadData.UseVisualStyleBackColor = true;
             this.btnLoadData.Click += new System.EventHandler(this.btnLoadData_Click);
             // 
-            // AddAssetForm
+            // AddHardwareAssetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -277,8 +277,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAssetName);
             this.Controls.Add(this.label1);
-            this.Name = "AddAssetForm";
-            this.Text = "Add Asset";
+            this.Name = "AddHardwareAssetForm";
+            this.Text = "Add Hardware Asset";
             this.Click += new System.EventHandler(this.AddAssetForm_Click);
             this.ResumeLayout(false);
             this.PerformLayout();

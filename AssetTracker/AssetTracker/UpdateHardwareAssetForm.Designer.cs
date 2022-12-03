@@ -1,6 +1,6 @@
 ﻿namespace AssetTracker
 {
-    partial class UpdateAssetForm
+    partial class UpdateHardwareAssetForm
     {
         /// <summary>
         /// Required designer variable.
@@ -236,7 +236,7 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Name";
             // 
-            // UpdateAssetForm
+            // UpdateHardwareAssetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -262,8 +262,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAssetName);
             this.Controls.Add(this.label1);
-            this.Name = "UpdateAssetForm";
-            this.Text = "Update Asset";
+            this.Name = "UpdateHardwareAssetForm";
+            this.Text = "Update Hardware Asset";
             this.Click += new System.EventHandler(this.UpdateAssetForm_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
