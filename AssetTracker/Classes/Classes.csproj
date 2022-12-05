@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
     <PackageReference Include="MySql.Data" Version="8.0.31" />
+    <PackageReference Include="OSVersionExt" Version="2.0.0" />
     <PackageReference Include="System.Management" Version="6.0.0" />
   </ItemGroup>
 

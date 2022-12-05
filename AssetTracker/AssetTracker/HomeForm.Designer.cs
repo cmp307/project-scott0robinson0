@@ -175,6 +175,8 @@
             this.ClientSize = new System.Drawing.Size(360, 226);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(376, 265);
+            this.MinimumSize = new System.Drawing.Size(376, 265);
             this.Name = "HomeForm";
             this.Text = "Home";
             this.panel1.ResumeLayout(false);

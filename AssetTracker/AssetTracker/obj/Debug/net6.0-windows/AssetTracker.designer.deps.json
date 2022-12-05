@@ -240,6 +240,14 @@
           }
         }
       },
+      "OSVersionExt/2.0.0": {
+        "runtime": {
+          "lib/net462/OSVersionExt.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
       "Portable.BouncyCastle/1.9.0": {
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
@@ -1644,6 +1652,13 @@
       "sha512": "sha512-5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
       "path": "newtonsoft.json.bson/1.0.1",
       "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
+    },
+    "OSVersionExt/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YwE8iRNhtPXBcdjiGrma8cyg+v+BUJ8AgN7A++49xkW/dywZM1ZyTrAvi4ne/cDUgt49RmRtjEKo69F8dPpIIQ==",
+      "path": "osversionext/2.0.0",
+      "hashPath": "osversionext.2.0.0.nupkg.sha512"
     },
     "Portable.BouncyCastle/1.9.0": {
       "type": "package",

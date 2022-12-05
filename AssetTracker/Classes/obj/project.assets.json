@@ -295,6 +295,15 @@
           }
         }
       },
+      "OSVersionExt/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net462/OSVersionExt.dll": {}
+        },
+        "runtime": {
+          "lib/net462/OSVersionExt.dll": {}
+        }
+      },
       "Portable.BouncyCastle/1.9.0": {
         "type": "package",
         "compile": {
@@ -2252,6 +2261,18 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "OSVersionExt/2.0.0": {
+      "sha512": "YwE8iRNhtPXBcdjiGrma8cyg+v+BUJ8AgN7A++49xkW/dywZM1ZyTrAvi4ne/cDUgt49RmRtjEKo69F8dPpIIQ==",
+      "type": "package",
+      "path": "osversionext/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/OSVersionExt.dll",
+        "osversionext.2.0.0.nupkg.sha512",
+        "osversionext.nuspec"
       ]
     },
     "Portable.BouncyCastle/1.9.0": {
@@ -6322,6 +6343,7 @@
     "net6.0-windows7.0": [
       "Microsoft.AspNet.WebApi.Client >= 5.2.9",
       "MySql.Data >= 8.0.31",
+      "OSVersionExt >= 2.0.0",
       "System.Management >= 6.0.0"
     ]
   },
@@ -6377,6 +6399,10 @@
             "target": "Package",
             "version": "[8.0.31, )"
           },
+          "OSVersionExt": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "System.Management": {
             "target": "Package",
             "version": "[6.0.0, )"
@@ -6404,5 +6430,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'OSVersionExt 2.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "OSVersionExt",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
 }

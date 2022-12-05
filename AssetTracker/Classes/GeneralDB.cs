@@ -109,15 +109,13 @@ namespace Classes
         public bool RowExists(string table, string keyName, string keyValue)
         {
 
-            string condition = String.Format("{0} = '{1}'", keyName, keyValue);
+            string condition = String.Format("{0} = {1}", keyName, keyValue);
 
-            MySqlCommand command = Select(keyName, table, condition);
+            MySqlCommand command = Select("*", table, condition);
 
             using MySqlDataReader dataReader = command.ExecuteReader();
             if (dataReader.HasRows)
-                while (dataReader.Read())
-                    if (keyValue == dataReader.GetString(0))
-                        return true;
+                return true;
             return false;
         }
 

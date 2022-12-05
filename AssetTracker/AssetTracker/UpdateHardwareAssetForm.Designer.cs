@@ -262,6 +262,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAssetName);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(304, 516);
+            this.MinimumSize = new System.Drawing.Size(304, 516);
             this.Name = "UpdateHardwareAssetForm";
             this.Text = "Update Hardware Asset";
             this.Click += new System.EventHandler(this.UpdateAssetForm_Click);

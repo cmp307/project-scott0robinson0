@@ -39,7 +39,7 @@
             // 
             this.txtIPAddress.Location = new System.Drawing.Point(54, 74);
             this.txtIPAddress.Name = "txtIPAddress";
-            this.txtIPAddress.Size = new System.Drawing.Size(132, 23);
+            this.txtIPAddress.Size = new System.Drawing.Size(188, 23);
             this.txtIPAddress.TabIndex = 0;
             this.txtIPAddress.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtIPAddress_KeyUp);
             // 
@@ -65,7 +65,7 @@
             // 
             this.txtAssetID.Location = new System.Drawing.Point(54, 118);
             this.txtAssetID.Name = "txtAssetID";
-            this.txtAssetID.Size = new System.Drawing.Size(132, 23);
+            this.txtAssetID.Size = new System.Drawing.Size(188, 23);
             this.txtAssetID.TabIndex = 2;
             this.txtAssetID.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAssetID_KeyUp);
             // 
@@ -73,7 +73,7 @@
             // 
             this.btnConfirm.Location = new System.Drawing.Point(54, 147);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(132, 23);
+            this.btnConfirm.Size = new System.Drawing.Size(188, 23);
             this.btnConfirm.TabIndex = 4;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -83,12 +83,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(249, 228);
+            this.ClientSize = new System.Drawing.Size(300, 221);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAssetID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIPAddress);
+            this.MaximumSize = new System.Drawing.Size(316, 260);
+            this.MinimumSize = new System.Drawing.Size(316, 260);
             this.Name = "DeleteHardwareAssetForm";
             this.Text = "Delete Hardware Asset";
             this.ResumeLayout(false);

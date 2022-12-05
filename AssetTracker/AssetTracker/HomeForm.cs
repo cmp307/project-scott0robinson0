@@ -40,7 +40,7 @@ namespace AssetTracker2
 
         private void btnUpdateAsset_Click(object sender, EventArgs e)
         {
-            UpdateHardwareChooseAssetForm updateChooseAssetForm = new();
+            UpdateChooseHardwareAssetForm updateChooseAssetForm = new();
             updateChooseAssetForm.ShowDialog();
         }
 
@@ -52,17 +52,20 @@ namespace AssetTracker2
 
         private void btnFindS_Click(object sender, EventArgs e)
         {
-
+            FindSoftwareAssetForm findSoftwareAssetForm = new();
+            findSoftwareAssetForm.ShowDialog();
         }
 
         private void btnUpdateS_Click(object sender, EventArgs e)
         {
-
+            UpdateChooseSoftwareAssetForm updateChooseAssetForm = new();
+            updateChooseAssetForm.ShowDialog();
         }
 
         private void btnDeleteS_Click(object sender, EventArgs e)
         {
-
+            DeleteSoftwareAssetForm deleteSoftwareAssetForm = new();
+            deleteSoftwareAssetForm.ShowDialog();
         }
     }
 }

@@ -22,8 +22,8 @@ namespace AssetTracker
         {
             InitializeComponent();
             PurchaseDate = "";
-            ip = UpdateHardwareChooseAssetForm.IpText;
-            id = UpdateHardwareChooseAssetForm.IdText;
+            ip = UpdateChooseHardwareAssetForm.IpText;
+            id = UpdateChooseHardwareAssetForm.IdText;
 
             HardwareAssetDB database = new();
             MySqlCommand command;
@@ -48,7 +48,7 @@ namespace AssetTracker
                 txtIPAddress.Text = reader.GetString("IP Address");
                 txtAssetName.Text = reader.GetString("Name");
 
-                if (!reader.IsDBNull("Note"))
+                if (!reader.IsDBNull("Purchase Date"))
                 {
                     dtpPurchaseDate.CustomFormat = "yyyy-MM-dd";
                     dtpPurchaseDate.Value = reader.GetDateTime("Purchase Date");

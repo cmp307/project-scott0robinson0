@@ -114,9 +114,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUsername);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(421, 281);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(421, 281);
             this.Name = "LoginForm";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

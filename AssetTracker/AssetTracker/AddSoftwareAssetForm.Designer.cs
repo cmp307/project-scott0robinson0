@@ -36,7 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnLoadData = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.txtTest = new System.Windows.Forms.TextBox();
+            this.txtArchitecture = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +58,7 @@
             // 
             // txtManufacturer
             // 
-            this.txtManufacturer.Location = new System.Drawing.Point(100, 114);
+            this.txtManufacturer.Location = new System.Drawing.Point(100, 143);
             this.txtManufacturer.Name = "txtManufacturer";
             this.txtManufacturer.Size = new System.Drawing.Size(233, 23);
             this.txtManufacturer.TabIndex = 3;
@@ -65,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 117);
+            this.label2.Location = new System.Drawing.Point(15, 146);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 15);
             this.label2.TabIndex = 2;
@@ -99,7 +100,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(100, 143);
+            this.btnSubmit.Location = new System.Drawing.Point(100, 172);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(233, 23);
             this.btnSubmit.TabIndex = 7;
@@ -107,22 +108,29 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // txtTest
+            // txtArchitecture
             // 
-            this.txtTest.Location = new System.Drawing.Point(12, 210);
-            this.txtTest.MaxLength = 99999999;
-            this.txtTest.Multiline = true;
-            this.txtTest.Name = "txtTest";
-            this.txtTest.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTest.Size = new System.Drawing.Size(1546, 579);
-            this.txtTest.TabIndex = 8;
+            this.txtArchitecture.Location = new System.Drawing.Point(100, 114);
+            this.txtArchitecture.Name = "txtArchitecture";
+            this.txtArchitecture.Size = new System.Drawing.Size(233, 23);
+            this.txtArchitecture.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(22, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 15);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Architecture";
             // 
             // AddSoftwareAssetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1570, 801);
-            this.Controls.Add(this.txtTest);
+            this.ClientSize = new System.Drawing.Size(356, 218);
+            this.Controls.Add(this.txtArchitecture);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnLoadData);
             this.Controls.Add(this.txtVersion);
@@ -131,6 +139,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(372, 257);
+            this.MinimumSize = new System.Drawing.Size(372, 257);
             this.Name = "AddSoftwareAssetForm";
             this.Text = "Add Software Asset";
             this.ResumeLayout(false);
@@ -148,6 +158,7 @@
         private Label label3;
         private Button btnLoadData;
         private Button btnSubmit;
-        private TextBox txtTest;
+        private TextBox txtArchitecture;
+        private Label label4;
     }
 }
