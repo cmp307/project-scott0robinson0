@@ -107,3 +107,6 @@ C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-w
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.UpdateChooseHardwareAssetForm.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.UpdateSoftwareAssetForm.resources
 C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.UpdateChooseSoftwareAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.LinkAssetsForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.VulnerabilitiesChooseSoftwareAssetForm.resources
+C:\Users\Scott\source\repos\project\AssetTracker\AssetTracker\obj\Debug\net6.0-windows\AssetTracker.VulnerabilitiesForm.resources

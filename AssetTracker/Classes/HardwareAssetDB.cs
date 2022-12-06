@@ -12,10 +12,17 @@ namespace Classes
 {
     public class HardwareAssetDB : GeneralDB
     {
+        //private const string selectAllFromAsset = @"
+        //        SELECT SGHARDWAREASSET.id 'ID', SGHARDWAREASSET.name 'Name', SGHARDWAREASSET.ipaddress 'IP Address', SGHARDWAREASSET.purchasedate 'Purchase Date', SGHARDWAREASSET.note 'Note', SGHARDWAREASSET.modelname 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
+        //        FROM SGHARDWAREASSET
+        //        INNER JOIN SGMODEL ON SGHARDWAREASSET.modelname = SGMODEL.modelname
+        //    ";
+
         private const string selectAllFromAsset = @"
-                SELECT SGHARDWAREASSET.id 'ID', SGHARDWAREASSET.name 'Name', SGHARDWAREASSET.ipaddress 'IP Address', SGHARDWAREASSET.purchasedate 'Purchase Date', SGHARDWAREASSET.note 'Note', SGHARDWAREASSET.modelname 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer'
+                SELECT SGHARDWAREASSET.id 'ID', SGHARDWAREASSET.name 'Name', SGHARDWAREASSET.ipaddress 'IP Address', SGHARDWAREASSET.purchasedate 'Purchase Date', SGHARDWAREASSET.note 'Note', SGHARDWAREASSET.modelname 'Model', SGMODEL.type 'Type', SGMODEL.manufacturer 'Manufacturer', SGHARDWAREASSET.softwareassetname 'OS Name', SGHARDWAREASSET.softwareassetversion 'OS Version', SGSOFTWAREASSET.manufacturer 'OS Manufacturer', SGSOFTWAREASSET.architecture 'OS Architecture'
                 FROM SGHARDWAREASSET
                 INNER JOIN SGMODEL ON SGHARDWAREASSET.modelname = SGMODEL.modelname
+                LEFT JOIN SGSOFTWAREASSET ON (SGHARDWAREASSET.softwareassetname, SGHARDWAREASSET.softwareassetversion) = (SGSOFTWAREASSET.name, SGSOFTWAREASSET.version)
             ";
 
         public void AddAsset(HardwareAsset hardwareAsset)

@@ -67,5 +67,17 @@ namespace AssetTracker2
             DeleteSoftwareAssetForm deleteSoftwareAssetForm = new();
             deleteSoftwareAssetForm.ShowDialog();
         }
+
+        private void btnLink_Click(object sender, EventArgs e)
+        {
+            LinkAssetsForm linkAssetsForm = new();
+            linkAssetsForm.ShowDialog();
+        }
+
+        private void btnVulnerabilities_Click(object sender, EventArgs e)
+        {
+            VulnerabilitiesChooseSoftwareAssetForm vulnerabilitiesChooseSoftwareAssetForm = new();
+            vulnerabilitiesChooseSoftwareAssetForm.ShowDialog();
+        }
     }
 }

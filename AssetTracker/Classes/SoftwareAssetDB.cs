@@ -34,7 +34,7 @@ namespace Classes
         public int UpdateAsset(SoftwareAsset softwareAsset)
         {
             Dictionary<string, string> fields = OBJProperties.GetProperties(softwareAsset);
-            string condition = String.Format("(name, version) = ('{0}', '{1}')");
+            string condition = String.Format("(name, version) = ('{0}', '{1}')", softwareAsset.Name, softwareAsset.Version);
 
             return Update("SGSOFTWAREASSET", fields, condition);
         }

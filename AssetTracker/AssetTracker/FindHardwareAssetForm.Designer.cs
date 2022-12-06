@@ -95,19 +95,19 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(174, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1135, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(1336, 630);
             this.dataGridView1.TabIndex = 7;
             // 
             // FindHardwareAssetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1321, 450);
+            this.ClientSize = new System.Drawing.Size(1522, 654);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbAssetID);
             this.Controls.Add(this.txtAssetID);
@@ -115,8 +115,6 @@
             this.Controls.Add(this.cbAllAssets);
             this.Controls.Add(this.txtIPAddress);
             this.Controls.Add(this.btnLoad);
-            this.MaximumSize = new System.Drawing.Size(1337, 489);
-            this.MinimumSize = new System.Drawing.Size(1337, 489);
             this.Name = "FindHardwareAssetForm";
             this.Text = "Find Hardware Asset";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

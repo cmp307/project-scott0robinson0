@@ -67,6 +67,7 @@
             // 
             // txtVersion
             // 
+            this.txtVersion.Enabled = false;
             this.txtVersion.Location = new System.Drawing.Point(104, 58);
             this.txtVersion.Name = "txtVersion";
             this.txtVersion.Size = new System.Drawing.Size(233, 23);
@@ -99,6 +100,7 @@
             // 
             // txtName
             // 
+            this.txtName.Enabled = false;
             this.txtName.Location = new System.Drawing.Point(104, 29);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(233, 23);

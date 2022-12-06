@@ -33,8 +33,10 @@
             this.btnDeleteAsset = new System.Windows.Forms.Button();
             this.btnUpdateAsset = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLink = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnVulnerabilities = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddS = new System.Windows.Forms.Button();
             this.btnUpdateS = new System.Windows.Forms.Button();
@@ -87,15 +89,26 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.btnLink);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnAddAsset);
             this.panel1.Controls.Add(this.btnUpdateAsset);
             this.panel1.Controls.Add(this.btnFindAssets);
             this.panel1.Controls.Add(this.btnDeleteAsset);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(42, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(165, 203);
+            this.panel1.Size = new System.Drawing.Size(165, 242);
             this.panel1.TabIndex = 6;
+            // 
+            // btnLink
+            // 
+            this.btnLink.Location = new System.Drawing.Point(36, 187);
+            this.btnLink.Name = "btnLink";
+            this.btnLink.Size = new System.Drawing.Size(91, 30);
+            this.btnLink.TabIndex = 9;
+            this.btnLink.Text = "Link";
+            this.btnLink.UseVisualStyleBackColor = true;
+            this.btnLink.Click += new System.EventHandler(this.btnLink_Click);
             // 
             // label1
             // 
@@ -109,15 +122,26 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.Controls.Add(this.btnVulnerabilities);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btnAddS);
             this.panel2.Controls.Add(this.btnUpdateS);
             this.panel2.Controls.Add(this.btnFindS);
             this.panel2.Controls.Add(this.btnDeleteS);
-            this.panel2.Location = new System.Drawing.Point(183, 12);
+            this.panel2.Location = new System.Drawing.Point(213, 46);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(165, 203);
+            this.panel2.Size = new System.Drawing.Size(165, 242);
             this.panel2.TabIndex = 8;
+            // 
+            // btnVulnerabilities
+            // 
+            this.btnVulnerabilities.Location = new System.Drawing.Point(36, 187);
+            this.btnVulnerabilities.Name = "btnVulnerabilities";
+            this.btnVulnerabilities.Size = new System.Drawing.Size(91, 30);
+            this.btnVulnerabilities.TabIndex = 10;
+            this.btnVulnerabilities.Text = "Vulnerabilities";
+            this.btnVulnerabilities.UseVisualStyleBackColor = true;
+            this.btnVulnerabilities.Click += new System.EventHandler(this.btnVulnerabilities_Click);
             // 
             // label2
             // 
@@ -172,11 +196,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 226);
+            this.ClientSize = new System.Drawing.Size(431, 336);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(376, 265);
-            this.MinimumSize = new System.Drawing.Size(376, 265);
             this.Name = "HomeForm";
             this.Text = "Home";
             this.panel1.ResumeLayout(false);
@@ -200,5 +222,7 @@
         private Button btnUpdateS;
         private Button btnFindS;
         private Button btnDeleteS;
+        private Button btnLink;
+        private Button btnVulnerabilities;
     }
 }
