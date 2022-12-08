@@ -129,6 +129,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(381, 235);
+            this.MinimumSize = new System.Drawing.Size(381, 235);
             this.Name = "UpdateSoftwareAssetForm";
             this.Text = "Update Software Asset";
             this.ResumeLayout(false);

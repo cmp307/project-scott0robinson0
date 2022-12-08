@@ -26,9 +26,6 @@ namespace AssetTracker
             database = new SoftwareAssetDB();
             NameText = "";
             VersionText = "";
-
-            txtName.Text = "microsoft windows 10 home";
-            txtVersion.Text = "22h2";
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

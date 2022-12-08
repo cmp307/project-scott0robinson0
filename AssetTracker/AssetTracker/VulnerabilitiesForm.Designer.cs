@@ -449,6 +449,8 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(1047, 573);
+            this.MinimumSize = new System.Drawing.Size(1047, 573);
             this.Name = "VulnerabilitiesForm";
             this.Text = "Vulnerabilities";
             this.panel1.ResumeLayout(false);

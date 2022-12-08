@@ -173,6 +173,8 @@
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(694, 269);
+            this.MinimumSize = new System.Drawing.Size(694, 269);
             this.Name = "LinkAssetsForm";
             this.Text = "Link Assets";
             this.panel1.ResumeLayout(false);

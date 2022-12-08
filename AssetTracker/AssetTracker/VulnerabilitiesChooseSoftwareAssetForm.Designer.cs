@@ -87,6 +87,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(397, 246);
+            this.MinimumSize = new System.Drawing.Size(397, 246);
             this.Name = "VulnerabilitiesChooseSoftwareAssetForm";
             this.Text = "Choose Software Asset";
             this.ResumeLayout(false);

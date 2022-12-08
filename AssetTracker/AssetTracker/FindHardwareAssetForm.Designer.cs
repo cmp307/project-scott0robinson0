@@ -115,6 +115,8 @@
             this.Controls.Add(this.cbAllAssets);
             this.Controls.Add(this.txtIPAddress);
             this.Controls.Add(this.btnLoad);
+            this.MaximumSize = new System.Drawing.Size(1538, 693);
+            this.MinimumSize = new System.Drawing.Size(1538, 693);
             this.Name = "FindHardwareAssetForm";
             this.Text = "Find Hardware Asset";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

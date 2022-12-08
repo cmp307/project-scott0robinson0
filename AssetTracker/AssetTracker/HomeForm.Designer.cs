@@ -95,7 +95,7 @@
             this.panel1.Controls.Add(this.btnUpdateAsset);
             this.panel1.Controls.Add(this.btnFindAssets);
             this.panel1.Controls.Add(this.btnDeleteAsset);
-            this.panel1.Location = new System.Drawing.Point(42, 46);
+            this.panel1.Location = new System.Drawing.Point(47, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(165, 242);
             this.panel1.TabIndex = 6;
@@ -128,7 +128,7 @@
             this.panel2.Controls.Add(this.btnUpdateS);
             this.panel2.Controls.Add(this.btnFindS);
             this.panel2.Controls.Add(this.btnDeleteS);
-            this.panel2.Location = new System.Drawing.Point(213, 46);
+            this.panel2.Location = new System.Drawing.Point(218, 46);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(165, 242);
             this.panel2.TabIndex = 8;
@@ -199,6 +199,8 @@
             this.ClientSize = new System.Drawing.Size(431, 336);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(447, 375);
+            this.MinimumSize = new System.Drawing.Size(447, 375);
             this.Name = "HomeForm";
             this.Text = "Home";
             this.panel1.ResumeLayout(false);
