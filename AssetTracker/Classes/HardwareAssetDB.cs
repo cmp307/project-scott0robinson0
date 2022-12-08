@@ -33,7 +33,7 @@ namespace Classes
 
             foreach (KeyValuePair<string, string> property in properties)
             {
-                if (property.Key != "type" || property.Key != "manufacturer")
+                if (property.Key != "type" && property.Key != "manufacturer")
                 {
                     columns.Add(property.Key);
                     values.Add(property.Value);

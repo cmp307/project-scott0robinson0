@@ -109,7 +109,7 @@ namespace Classes
         public bool RowExists(string table, string keyName, string keyValue)
         {
 
-            string condition = String.Format("{0} = {1}", keyName, keyValue);
+            string condition = String.Format("{0} = '{1}'", keyName, keyValue);
 
             MySqlCommand command = Select("*", table, condition);
 
