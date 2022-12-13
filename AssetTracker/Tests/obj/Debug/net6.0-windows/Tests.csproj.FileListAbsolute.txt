@@ -13,6 +13,7 @@ C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\
 C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
 C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
 C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
+C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\System.Net.Http.Formatting.dll
 C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\Microsoft.TestPlatform.CoreUtilities.dll
 C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -25,7 +26,9 @@ C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\
 C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\MySql.Data.dll
 C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\ZstdNet.dll
 C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\Newtonsoft.Json.Bson.dll
 C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\NuGet.Frameworks.dll
+C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\OSVersionExt.dll
 C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
 C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\System.Management.dll
 C:\Users\Scott\source\repos\project\AssetTracker\Tests\bin\Debug\net6.0-windows\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll

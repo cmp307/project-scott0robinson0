@@ -1,4 +1,4 @@
-﻿using Classes;
+﻿using Classes.Database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace AssetTracker
 {
-    public partial class VulnerabilitiesChooseSoftwareAssetForm : Form
+    public partial class UpdateChooseSoftwareAssetForm : Form
     {
         private SoftwareAssetDB database;
         private static string nameText = "";
@@ -20,7 +20,7 @@ namespace AssetTracker
         public static string NameText { get => nameText; set => nameText = value; }
         public static string VersionText { get => versionText; set => versionText = value; }
 
-        public VulnerabilitiesChooseSoftwareAssetForm()
+        public UpdateChooseSoftwareAssetForm()
         {
             InitializeComponent();
             database = new SoftwareAssetDB();
@@ -41,13 +41,13 @@ namespace AssetTracker
                 NameText = txtName.Text;
                 VersionText = txtVersion.Text;
 
-                VulnerabilitiesForm vulnerabilitiesForm = new();
+                UpdateSoftwareAssetForm updateAssetForm = new();
                 database.Conn.Open();
                 bool exists = database.AssetExists(NameText, VersionText);
                 database.Conn.Close();
                 if (exists)
                 {
-                    vulnerabilitiesForm.ShowDialog();
+                    updateAssetForm.ShowDialog();
                 }
                 else
                     MessageBox.Show("Asset " + NameText + ", " + VersionText + " does not exist.");

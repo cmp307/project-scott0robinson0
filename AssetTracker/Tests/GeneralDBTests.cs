@@ -1,4 +1,6 @@
-﻿namespace Tests
+﻿using Classes.Database;
+
+namespace Tests
 {
     [TestClass]
     public class GeneralDBTests : GeneralDB

@@ -1,4 +1,5 @@
 ﻿using System.Xml.Linq;
+using Classes.Assets;
 
 namespace Tests
 {
@@ -52,14 +53,16 @@ namespace Tests
         {
             Dictionary<string, string> properties = Classes.OBJProperties.GetProperties(hardwareAsset);
 
-            Dictionary<string, string> expected = new();
-            expected.Add("name", "testname");
-            expected.Add("ipaddress", "testipaddress");
-            expected.Add("purchasedate", "testpurchasedate");
-            expected.Add("note", "testnote");
-            expected.Add("modelname", "testmodel");
-            expected.Add("type", "testtype");
-            expected.Add("manufacturer", "testmanufacturer");
+            Dictionary<string, string> expected = new()
+            {
+                { "name", "testname" },
+                { "ipaddress", "testipaddress" },
+                { "purchasedate", "testpurchasedate" },
+                { "note", "testnote" },
+                { "modelname", "testmodel" },
+                { "type", "testtype" },
+                { "manufacturer", "testmanufacturer" }
+            };
 
             CollectionAssert.AreEquivalent(expected, properties);
         }

@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="AddHardwareAssetForm.cs">
+    <Compile Update="HardwareAssetForms\AddHardwareAssetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AddSoftwareAssetForm.cs">
+    <Compile Update="SoftwareAssetForms\AddSoftwareAssetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="DeleteHardwareAssetForm.cs">
+    <Compile Update="HardwareAssetForms\DeleteHardwareAssetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="DeleteSoftwareAssetForm.cs">
+    <Compile Update="SoftwareAssetForms\DeleteSoftwareAssetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FindSoftwareAssetForm.cs">
+    <Compile Update="SoftwareAssetForms\FindSoftwareAssetForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FindHardwareAssetForm.cs">
+    <Compile Update="HardwareAssetForms\FindHardwareAssetForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LinkAssetsForm.cs">
@@ -28,22 +28,22 @@
     <Compile Update="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UpdateChooseSoftwareAssetForm.cs">
+    <Compile Update="SoftwareAssetForms\UpdateChooseSoftwareAssetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UpdateHardwareAssetForm.cs">
+    <Compile Update="HardwareAssetForms\UpdateHardwareAssetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UpdateChooseHardwareAssetForm.cs">
+    <Compile Update="HardwareAssetForms\UpdateChooseHardwareAssetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UpdateSoftwareAssetForm.cs">
+    <Compile Update="SoftwareAssetForms\UpdateSoftwareAssetForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="VulnerabilitiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="VulnerabilitiesChooseSoftwareAssetForm.cs">
+    <Compile Update="SoftwareAssetForms\VulnerabilitiesChooseSoftwareAssetForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

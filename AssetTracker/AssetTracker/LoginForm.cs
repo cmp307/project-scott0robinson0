@@ -20,6 +20,7 @@ namespace AssetTracker
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             string userName = txtUsername.Text;
             string password = txtPassword.Text;
 

@@ -1,3 +1,5 @@
+using Classes.Assets;
+
 namespace Tests
 {
     [TestClass]

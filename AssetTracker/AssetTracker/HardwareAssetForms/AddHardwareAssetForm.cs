@@ -1,5 +1,7 @@
-﻿using Classes;
+﻿using Classes.Assets;
+using Classes.Database;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 namespace AssetTracker2
 {
@@ -30,6 +32,13 @@ namespace AssetTracker2
 
                 if (txtManufacturer.Text == "")
                     throw new Exception("Manufacturer is mandatory.");
+
+                // https://stackoverflow.com/questions/4890789/regex-for-an-ip-address
+                Regex ip = new Regex(@"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b");
+                MatchCollection result = ip.Matches(txtIPAddress.Text);
+
+                if (result.Count == 0)
+                    throw new Exception("Please enter a valid IP address.");
 
                 HardwareAssetDB database = new();
                 HardwareAsset hardwareAsset = new(txtAssetName.Text, txtIPAddress.Text, PurchaseDate, txtNote.Text, txtModel.Text, txtType.Text, txtManufacturer.Text);

@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 using OSVersionExtension;
 using System.Text.RegularExpressions;
 
-namespace Classes
+namespace Classes.Assets
 {
 
     public class SoftwareAsset : Asset

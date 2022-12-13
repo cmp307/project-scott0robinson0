@@ -8,7 +8,7 @@ using System.Xml.Linq;
 using System.Management;
 using System.Collections;
 
-namespace Classes
+namespace Classes.Assets
 {
     public class HardwareAsset : Asset
     {
@@ -57,10 +57,10 @@ namespace Classes
 
         public override void RetrieveData()
         {
-            System.Management.SelectQuery query = new System.Management.SelectQuery("Select * from Win32_ComputerSystem");
-            using (System.Management.ManagementObjectSearcher searcher = new System.Management.ManagementObjectSearcher(query))
+            SelectQuery query = new SelectQuery("Select * from Win32_ComputerSystem");
+            using (ManagementObjectSearcher searcher = new ManagementObjectSearcher(query))
             {
-                foreach (System.Management.ManagementObject process in searcher.Get())
+                foreach (ManagementObject process in searcher.Get())
                 {
                     process.Get();
                     try

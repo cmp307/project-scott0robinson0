@@ -62,6 +62,18 @@
           }
         }
       },
+      "Microsoft.AspNet.WebApi.Client/5.2.9": {
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {
+            "assemblyVersion": "5.2.9.0",
+            "fileVersion": "5.2.61129.10"
+          }
+        }
+      },
       "Microsoft.CodeCoverage/17.3.2": {
         "runtime": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
@@ -457,11 +469,31 @@
           }
         }
       },
+      "Newtonsoft.Json.Bson/1.0.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.1.20722"
+          }
+        }
+      },
       "NuGet.Frameworks/5.11.0": {
         "runtime": {
           "lib/netstandard2.0/NuGet.Frameworks.dll": {
             "assemblyVersion": "5.11.0.10",
             "fileVersion": "5.11.0.10"
+          }
+        }
+      },
+      "OSVersionExt/2.0.0": {
+        "runtime": {
+          "lib/net462/OSVersionExt.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
           }
         }
       },
@@ -1256,7 +1288,9 @@
       },
       "Classes/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.9",
           "MySql.Data": "8.0.31",
+          "OSVersionExt": "2.0.0",
           "System.Management": "6.0.0"
         },
         "runtime": {
@@ -1313,6 +1347,13 @@
       "sha512": "sha512-jCfNP0inx1sGcP3KSbpiDEH3km2e1sVBjMfKo+V92jr1dL4ZYgA1uhRMl1wAtdGZcbObXIikKqtVlgx3j/CW6g==",
       "path": "k4os.hash.xxhash/1.0.6",
       "hashPath": "k4os.hash.xxhash.1.0.6.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Client/5.2.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cuVhPjjNMSEFpKXweMNBbsG4RUFuuZpFBm8tSyw309U9JEjcnbB6n3EPb4xwgcy9bJ38ctIbv5G8zXUBhlrPWw==",
+      "path": "microsoft.aspnet.webapi.client/5.2.9",
+      "hashPath": "microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/17.3.2": {
       "type": "package",
@@ -1412,12 +1453,26 @@
       "path": "newtonsoft.json/10.0.3",
       "hashPath": "newtonsoft.json.10.0.3.nupkg.sha512"
     },
+    "Newtonsoft.Json.Bson/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
+      "path": "newtonsoft.json.bson/1.0.1",
+      "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
+    },
     "NuGet.Frameworks/5.11.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-eaiXkUjC4NPcquGWzAGMXjuxvLwc6XGKMptSyOGQeT0X70BUZObuybJFZLA0OfTdueLd3US23NBPTBb6iF3V1Q==",
       "path": "nuget.frameworks/5.11.0",
       "hashPath": "nuget.frameworks.5.11.0.nupkg.sha512"
+    },
+    "OSVersionExt/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YwE8iRNhtPXBcdjiGrma8cyg+v+BUJ8AgN7A++49xkW/dywZM1ZyTrAvi4ne/cDUgt49RmRtjEKo69F8dPpIIQ==",
+      "path": "osversionext/2.0.0",
+      "hashPath": "osversionext.2.0.0.nupkg.sha512"
     },
     "Portable.BouncyCastle/1.9.0": {
       "type": "package",

@@ -8,7 +8,8 @@ using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Classes;
+using Classes.Assets;
+using Classes.Database;
 using MySqlX.XDevAPI;
 
 namespace AssetTracker

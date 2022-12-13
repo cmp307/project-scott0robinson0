@@ -1,4 +1,4 @@
-﻿using Classes;
+﻿using Classes.Database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace AssetTracker
 {
-    public partial class UpdateChooseSoftwareAssetForm : Form
+    public partial class VulnerabilitiesChooseSoftwareAssetForm : Form
     {
         private SoftwareAssetDB database;
         private static string nameText = "";
@@ -20,7 +20,7 @@ namespace AssetTracker
         public static string NameText { get => nameText; set => nameText = value; }
         public static string VersionText { get => versionText; set => versionText = value; }
 
-        public UpdateChooseSoftwareAssetForm()
+        public VulnerabilitiesChooseSoftwareAssetForm()
         {
             InitializeComponent();
             database = new SoftwareAssetDB();
@@ -32,6 +32,7 @@ namespace AssetTracker
         {
             try
             {
+                Cursor.Current = Cursors.WaitCursor;
                 if (txtName.Text == "")
                     throw new Exception("Asset name is mandatory.");
 
@@ -41,17 +42,17 @@ namespace AssetTracker
                 NameText = txtName.Text;
                 VersionText = txtVersion.Text;
 
-                UpdateSoftwareAssetForm updateAssetForm = new();
+                VulnerabilitiesForm vulnerabilitiesForm = new();
+                
                 database.Conn.Open();
                 bool exists = database.AssetExists(NameText, VersionText);
                 database.Conn.Close();
                 if (exists)
                 {
-                    updateAssetForm.ShowDialog();
+                    vulnerabilitiesForm.ShowDialog();
                 }
                 else
-                    MessageBox.Show("Asset " + NameText + ", " + VersionText + " does not exist.");
-                Close();
+                    throw new Exception("Asset " + NameText + ", " + VersionText + " does not exist.");
             }
             catch (Exception ex)
             {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Classes;
+using Classes.Database;
 using MySql.Data.MySqlClient;
 
 namespace AssetTracker

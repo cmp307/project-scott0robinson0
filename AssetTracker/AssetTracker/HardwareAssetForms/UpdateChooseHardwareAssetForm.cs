@@ -1,5 +1,4 @@
-﻿using Classes;
-using MySql.Data.MySqlClient;
+﻿using Classes.Database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,81 +11,86 @@ using System.Windows.Forms;
 
 namespace AssetTracker
 {
-    public partial class DeleteHardwareAssetForm : Form
+    public partial class UpdateChooseHardwareAssetForm : Form
     {
         private HardwareAssetDB database;
-        private string idtext;
-        private string iptext;
+        private static string ipText = "";
+        private static string idText = "";
 
-        public DeleteHardwareAssetForm()
+        public static string IdText { get => idText; set => idText = value; }
+        public static string IpText { get => ipText; set => ipText = value; }
+        public UpdateChooseHardwareAssetForm()
         {
             InitializeComponent();
             database = new HardwareAssetDB();
-            idtext = "";
-            iptext = "";
+            IdText = "";
+            IpText = "";
         }
 
         private void txtIPAddress_KeyUp(object sender, KeyEventArgs e)
         {
-            iptext = txtIPAddress.Text;
+            IpText = txtIPAddress.Text;
 
-            if (iptext != "")
+            if (IpText != "")
             {
                 txtAssetID.Text = "";
                 txtAssetID.Enabled = false;
             }
             else
             {
-                txtAssetID.Text = idtext;
+                txtAssetID.Text = IdText;
                 txtAssetID.Enabled = true;
-            } 
+            }
         }
 
         private void txtAssetID_KeyUp(object sender, KeyEventArgs e)
         {
-            idtext = txtAssetID.Text;
+            IdText = txtAssetID.Text;
 
-            if (idtext != "")
+            if (IdText != "")
             {
                 txtIPAddress.Text = "";
                 txtIPAddress.Enabled = false;
             }
             else
             {
-                txtIPAddress.Text = iptext;
+                txtIPAddress.Text = IpText;
                 txtIPAddress.Enabled = true;
             }
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            //database.Conn.Close();
             try
             {
-                if (idtext != "")
+                UpdateHardwareAssetForm updateAssetForm = new();
+                if (IdText != "")
                 {
                     database.Conn.Open();
-                    int deleted = database.DeleteAssetById(int.Parse(idtext));
+                    bool exists = database.AssetExistsById(Int32.Parse(IdText));
                     database.Conn.Close();
-                    if (deleted > 0)
-                        MessageBox.Show("Deleted asset: " + idtext);
+                    if (exists)
+                    {
+                        updateAssetForm.ShowDialog();
+                    }
                     else
-                        MessageBox.Show("Asset " + idtext + " did not exist.");
+                        MessageBox.Show("Asset " + IdText + " does not exist.");
                 }
-                else if (iptext != "")
+                else if (IpText != "")
                 {
                     database.Conn.Open();
-                    int deleted = database.DeleteAssetByIp(iptext);
+                    bool exists = database.AssetExistsByIp(IpText);
                     database.Conn.Close();
-                    if (deleted > 0)
-                        MessageBox.Show("Deleted asset: " + iptext);
+                    if (exists)
+                        updateAssetForm.ShowDialog();
                     else
-                        MessageBox.Show("Asset " + iptext + " did not exist.");
+                        MessageBox.Show("Asset " + IpText + " does not exist.");
                 }
+                Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Text, ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
     }
